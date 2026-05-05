@@ -33,7 +33,7 @@ void generateNewPop(vector<individual> &old_pop){
         parent1 = selection(old_pop);
 
         p = getRandomProb();
-        if(p<=params.cross_prob){
+        if(p <= params.cross_prob){
             parent2 = selection(old_pop);
 
             children = crossover(parent1, parent2);
@@ -53,7 +53,7 @@ void generateNewPop(vector<individual> &old_pop){
             }
             c++;
         }
-        else if(p<=(params.cross_prob + params.mut_prob)){
+        else if(p <= (params.cross_prob + params.mut_prob)){
 
             mutation(parent1);
 

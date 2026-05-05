@@ -11,7 +11,6 @@ hyperparams params;
 // Random number generator declaration
 mt19937 rng;
 
-
 int main(int argc, char *argv[]){
 
     if(argc < 5){
@@ -19,21 +18,21 @@ int main(int argc, char *argv[]){
         exit(1);
     }
 
-    //Asignamos el path
+    // Assign the path
     string path = argv[1];
   
-    //Asignamos la semilla 
+    // Assign the seed
     int seed = atoi(argv[2]);
     randomize(seed);
 
-    //Definimos hyperparametros del algoritmo
+    // Define the hyperparameters
     params.max_gen = atoi(argv[3]);
     params.popsize = atoi(argv[4]);
     params.cross_prob = stof(argv[5]);
     params.mut_prob = stof(argv[6]);
     params.elite = 1;
     
-    //Comenzamos lectura de la instancia
+    // Reading the instance file
     ifstream file(path);
 
     if(!file.is_open()){
@@ -44,16 +43,20 @@ int main(int argc, char *argv[]){
     cout << "Reading instance: " << path << "\n";
     readInstance(file);
     
+    // Start the timer
     auto start = chrono::high_resolution_clock::now();
 
+    // Initialize the population
     vector<individual> pop = initialize_pop();
 
+    // Main loop of the evolutionary algorithm
     for (int i = 0; i < params.max_gen; i++)
     {      
         generateNewPop(pop);
         evaluatePop(pop);
     }
 
+    // End the timer
     auto end = chrono::high_resolution_clock::now();
     chrono::duration<double> elapsed = end - start;
 
