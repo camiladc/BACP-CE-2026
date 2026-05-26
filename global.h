@@ -7,11 +7,14 @@
 /* ------------- STRUCTURES ---------------------*/
 struct individual
 {
-    // Individual representation
-    std::vector<int> courses;
+    // Individual representation: courses per semester
+    std::vector<std::vector<int>> courses;
     
-    // Fitness value
+    // Individural fitness value
     float fitness[1];
+
+    // Per semester fitness value
+    std::vector<float> period_fitness;
 
 };
 
@@ -40,7 +43,7 @@ std::vector<individual> initialize_pop();
 bool fitnessComparisonAsc(const individual &a, individual &b);
 void generateNewPop(std::vector<individual> &old_pop);
 void evaluatePop(std::vector<individual> &pop);
-individual selection(vector<individual> &old_pop);
+individual selection(std::vector<individual> &old_pop);
 std::vector<individual> crossover(individual &parent1, individual &parent2);
 void mutation(individual &parent1);
 

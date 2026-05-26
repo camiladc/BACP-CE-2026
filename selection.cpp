@@ -3,11 +3,18 @@
 #include "global.h"
 using namespace std;
 
+
+// Function to evaluate the fitness of each individual in the population
+void evaluatePop(vector<individual> &pop){
+}
+
 // Function to sort individuals in ascending order of fitness
 bool fitnessComparisonAsc(const individual &a, individual &b) {
     return a.fitness[0] < b.fitness[0];
 }
 
+
+// Roulette selection without replacement
 individual selection(vector<individual> &old_pop){
 
 }
@@ -63,8 +70,4 @@ void generateNewPop(vector<individual> &old_pop){
             new_pop[c] = parent1;
     }
     old_pop = new_pop;
-}
-
-// Function to evaluate the fitness of each individual in the population
-void evaluatePop(vector<individual> &pop){
 }
