@@ -3,6 +3,10 @@
 #include "global.h"
 using namespace std;
 
+// When assigning course to period: period >= course_min_period[course]
+// and isPlacementValid(course, period, assigned_period) after copying parent blocks.
+// Use earliestFeasiblePeriod() for repair if a child violates prereq floors.
+
 // Crossover functions
 // Crossover 1:
 // Select the best N semester from both parent as the base of the child, 

@@ -71,6 +71,11 @@ extern std::vector<int> course_credits; // list of course credits, indexed by co
 extern std::vector<std::pair<int,int>> prerequisites; // list of prerequisites, indexed by course ID
 extern std::unordered_map<std::string,int> course_index; // map of course names to IDs
 extern std::vector<std::vector<int>> prereq_adj; // adjacency list of prerequisites
+extern std::vector<int> course_min_period; // minimum period index per course from prereq chain
+
+// Earliest period for a course given already-assigned prereqs (-1 = unassigned)
+int earliestFeasiblePeriod(int course, const std::vector<int> &assigned_period);
+bool isPlacementValid(int course, int period, const std::vector<int> &assigned_period);
 
 
 #endif

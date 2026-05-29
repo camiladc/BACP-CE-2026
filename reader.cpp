@@ -15,6 +15,48 @@ vector<int> course_credits;
 vector<pair<int,int>> prerequisites;
 unordered_map<string,int> course_index;
 vector<vector<int>> prereq_adj;
+vector<int> course_min_period;
+
+static void computeCourseMinPeriod() {
+    vector<vector<int>> dependents(num_courses);
+    vector<int> indegree(num_courses, 0);
+
+    for (const auto &pr : prerequisites) {
+        int course = pr.first;
+        int prereq = pr.second;
+        if (course >= 0 && course < num_courses && prereq >= 0 && prereq < num_courses) {
+            dependents[prereq].push_back(course);
+            indegree[course]++;
+        }
+    }
+
+    course_min_period.assign(num_courses, 0);
+    queue<int> q;
+    int processed = 0;
+
+    for (int i = 0; i < num_courses; ++i) {
+        if (indegree[i] == 0) {
+            q.push(i);
+        }
+    }
+
+    while (!q.empty()) {
+        int u = q.front();
+        q.pop();
+        processed++;
+
+        for (int v : dependents[u]) {
+            course_min_period[v] = max(course_min_period[v], course_min_period[u] + 1);
+            if (--indegree[v] == 0) {
+                q.push(v);
+            }
+        }
+    }
+
+    if (processed < num_courses) {
+        cerr << "Warning: prerequisite graph contains cycles; course_min_period may be incomplete." << endl;
+    }
+}
 
 // Remove leading and trailing whitespace from a string
 static string trim(const string &s) {
@@ -189,6 +231,8 @@ void readInstance(ifstream &f){
             prereq_adj[pr.first].push_back(pr.second);
         }
     }
+
+    computeCourseMinPeriod();
 
     if (!course_credits.empty() && static_cast<int>(course_credits.size()) != num_courses) {
         cerr << "Warning: credit list length (" << course_credits.size() << ") does not match course count (" << num_courses << ")." << endl;

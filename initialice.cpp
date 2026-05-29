@@ -3,6 +3,22 @@
 #include "global.h"
 using namespace std;
 
+int earliestFeasiblePeriod(int course, const vector<int> &assigned_period) {
+    int earliest = (course >= 0 && course < static_cast<int>(course_min_period.size()))
+        ? course_min_period[course] : 0;
+    if (course >= 0 && course < num_courses) {
+        for (int prereq : prereq_adj[course]) {
+            if (prereq >= 0 && prereq < num_courses && assigned_period[prereq] >= 0) {
+                earliest = max(earliest, assigned_period[prereq] + 1);
+            }
+        }
+    }
+    return earliest;
+}
+
+bool isPlacementValid(int course, int period, const vector<int> &assigned_period) {
+    return period >= earliestFeasiblePeriod(course, assigned_period);
+}
 
 individual initialize_ind(){
 
@@ -55,13 +71,7 @@ individual initialize_ind(){
             ready.erase(it);
         }
 
-        // Determine the earliest semester after all prereqs of this course are scheduled
-        int earliest_period = 0;
-        for (int prereq : prereq_adj[course]) {
-            if (prereq >= 0 && prereq < num_courses && assigned_period[prereq] >= 0) {
-                earliest_period = max(earliest_period, assigned_period[prereq] + 1);
-            }
-        }
+        int earliest_period = earliestFeasiblePeriod(course, assigned_period);
 
         int credit = courseCredit(course);
         int best_period = -1;
