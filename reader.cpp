@@ -15,6 +15,8 @@ vector<int> course_credits;
 vector<pair<int,int>> prerequisites;
 unordered_map<string,int> course_index;
 vector<vector<int>> prereq_adj;
+int remaining_periods;
+vector<string> remaining_courses;
 
 // Remove leading and trailing whitespace from a string
 static string trim(const string &s) {
@@ -50,17 +52,17 @@ static size_t findMatchingDelimiter(const string &text, size_t openPos, char ope
 // The function reads the instance file, and extracts the
 // scalar parameters p, a, b, c, d as well as the course list, credit list,
 // and prerequisite pairs
-void readInstance(ifstream &f){
+void readInstance(ifstream &base_file, ifstream& case_file){
     // Read the entire file into a single string so we can parse it flexibly
-    string content;
+    string content_base;
     string line;
-    while (getline(f, line)) {
-        content += line;
-        content.push_back('\n');
+    while (getline(base_file, line)) {
+        content_base += line;
+        content_base.push_back('\n');
     }
 
     // Locate assignment statements like "p=", "a=", "courses =", etc
-    auto findAssignment = [&](const string &key) {
+    auto findAssignment = [](const string &key, string content) {
         size_t pos = 0;
         while (true) {
             pos = content.find(key, pos);
@@ -78,8 +80,8 @@ void readInstance(ifstream &f){
     };
 
     // Parse a single integer value from an assignment
-    auto parseInt = [&](const string &key, int &value) {
-        size_t pos = findAssignment(key);
+    auto parseInt = [&findAssignment](const string &key, int &value, string content) {
+        size_t pos = findAssignment(key, content);
         if (pos == string::npos) return false;
         pos = content.find('=', pos) + 1;
         while (pos < content.size() && isspace((unsigned char)content[pos])) pos++;
@@ -92,8 +94,8 @@ void readInstance(ifstream &f){
     };
 
     // Parse a delimited block such as courses { ... }, credit [ ... ], or prereq { ... }
-    auto parseBlock = [&](const string &key, char openDelim, char closeDelim, string &out) {
-        size_t pos = findAssignment(key);
+    auto parseBlock = [&findAssignment](const string &key, string content, char openDelim, char closeDelim, string &out) {
+        size_t pos = findAssignment(key,content);
         if (pos == string::npos) return false;
         pos = content.find(openDelim, pos);
         if (pos == string::npos) return false;
@@ -104,26 +106,26 @@ void readInstance(ifstream &f){
     };
 
     // Read the scalar instance parameters
-    if (!parseInt("p", num_periods)) {
+    if (!parseInt("p", num_periods, content_base)) {
         cerr << "Error: could not read number of periods (p)." << endl;
     }
-    if (!parseInt("a", min_load)) {
+    if (!parseInt("a", min_load, content_base)) {
         cerr << "Error: could not read minimum load (a)." << endl;
     }
-    if (!parseInt("b", max_load)) {
+    if (!parseInt("b", max_load, content_base)) {
         cerr << "Error: could not read maximum load (b)." << endl;
     }
-    if (!parseInt("c", min_courses)) {
+    if (!parseInt("c", min_courses, content_base)) {
         cerr << "Error: could not read minimum course load (c)." << endl;
     }
-    if (!parseInt("d", max_courses)) {
+    if (!parseInt("d", max_courses, content_base)) {
         cerr << "Error: could not read maximum course load (d)." << endl;
     }
 
     // Read the course name list from the courses block
     string block;
     course_names.clear();
-    if (parseBlock("courses", '{', '}', block)) {
+    if (parseBlock("courses", content_base,'{', '}', block)) {
         string token;
         stringstream ss(block);
         while (getline(ss, token, ',')) {
@@ -136,7 +138,7 @@ void readInstance(ifstream &f){
 
     // Read the credit list from the credit block
     course_credits.clear();
-    if (parseBlock("credit", '[', ']', block)) {
+    if (parseBlock("credit", content_base,'[', ']', block)) {
         string token;
         stringstream ss(block);
         while (getline(ss, token, ',')) {
@@ -155,7 +157,7 @@ void readInstance(ifstream &f){
 
     // Parse prerequisite pairs from the prereq block
     prerequisites.clear();
-    if (parseBlock("prereq", '{', '}', block)) {
+    if (parseBlock("prereq", content_base,'{', '}', block)) {
         size_t pos = 0;
         while (true) {
             pos = block.find('<', pos);
@@ -194,6 +196,30 @@ void readInstance(ifstream &f){
         cerr << "Warning: credit list length (" << course_credits.size() << ") does not match course count (" << num_courses << ")." << endl;
     }
 
-    cout << "Instance loaded: " << num_courses << " courses, " << prerequisites.size() << " prerequisites, " << num_periods << " periods." << endl;
+    cout << "Base instance loaded: " << num_courses << " courses, " << prerequisites.size() << " prerequisites, " << num_periods << " periods." << endl;
+    cout << "Loading student specific case...\n";
+
+    string content_case;
+    while (getline(base_file, line)) {
+        content_case += line;
+        content_case.push_back('\n');
+    }
+
+    if (!parseInt("p", remaining_periods, content_case)) {
+        cerr << "Error: could not read remaining periods for student." << endl;
+    }
+
+    block.clear();
+    remaining_courses.clear();
+    if (parseBlock("courses", content_case,'{', '}', block)) {
+        string token;
+        stringstream ss(block);
+        while (getline(ss, token, ',')) {
+            string name = trim(token);
+            if (!name.empty()) remaining_courses.push_back(name);
+        }
+    } else {
+        cerr << "Error: could not read courses list." << endl;
+    }
 }
 

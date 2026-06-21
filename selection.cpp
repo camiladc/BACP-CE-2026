@@ -3,7 +3,6 @@
 #include "global.h"
 using namespace std;
 
-
 // Function to evaluate the fitness of each individual in the population
 void evaluatePop(vector<individual> &pop){
     for (auto& ind: pop) {
@@ -39,7 +38,14 @@ void evaluatePop(vector<individual> &pop){
 
         // final fitness is the total variance
         ind.fitness[0] = std::accumulate(ind.period_fitness.begin(), ind.period_fitness.end(), (float) 0.0);
-        
+
+        // assign course-period relationship in individual
+        ind.course_children_period.clear();
+        vector<int> root_courses = getRootCourses();
+        for(const auto& course: remaining_courses) {
+            int id_course = course_index[course];
+            buildCoursePeriodRelationship(ind, id_course);
+        }
     }
 }
 
@@ -82,14 +88,21 @@ individual selection(vector<individual> &old_pop){
 
     for (int i = 0; i < old_pop.size(); ++i) {
         cum_prob += selection_probs[i];
-        if (cum_prob >= r) 
+        if (cum_prob >= r && old_pop[i].is_feasible) 
             return old_pop[i];
     }
 
     /*
-    default: return individual with best fitness
+    default: return individual with best fitness that is feasible
     @note: is this the best way to select an individual if the previous loop fails?
     */
+    int max_fit_idx = 0;
+
+    for (int i = 0; i < selection_probs.size(); i++)
+        if (!old_pop[i].is_feasible)
+            selection_probs[i] = 0.0F;
+    
+
     auto max_it = std::max_element(selection_probs.begin(), selection_probs.end());
     size_t best = std::distance(selection_probs.begin(), max_it);
 
