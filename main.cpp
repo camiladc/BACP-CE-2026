@@ -67,6 +67,12 @@ int main(int argc, char *argv[]){
     auto end = chrono::high_resolution_clock::now();
     chrono::duration<double> elapsed = end - start;
 
+
+    // Mostrar la mejor solución encontrada
+    sort(pop.begin(), pop.end(), fitnessComparisonAsc);
+    cout << "\nBest solution found:" << endl;
+    writeInd(pop[0]);
+    
     cout<<endl<<"Time elapsed: "<<elapsed.count()<<" seconds"<<endl;
 
     file_base.close();
