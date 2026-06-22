@@ -10,16 +10,25 @@ void writeInd(individual &ind){
     cout << "  Periods: " << ind.courses.size() << endl;
 
     for (int p = 0; p < static_cast<int>(ind.courses.size()); ++p) {
-        cout << "  Period " << p << ":";
         if (ind.courses[p].empty()) {
-            cout << " (empty)";
-        } else {
-            for (int course : ind.courses[p]) {
-                if (course >= 0 && course < static_cast<int>(course_names.size())) {
-                    cout << " " << course_names[course];
-                } else {
-                    cout << " #" << course;
-                }
+            cout << "  Period " << p << " (empty)";
+            cout << endl;
+            continue;
+        }
+
+        int period_total_credits = 0;
+        for (int course : ind.courses[p]) {
+            if (course >= 0 && course < static_cast<int>(course_credits.size())) {
+                period_total_credits += course_credits[course];
+            }
+        }
+
+        cout << "  Period " << p << " - " << period_total_credits << " credits:";
+        for (int course : ind.courses[p]) {
+            if (course >= 0 && course < static_cast<int>(course_names.size())) {
+                cout << " " << course_names[course];
+            } else {
+                cout << " #" << course;
             }
         }
         cout << endl;
