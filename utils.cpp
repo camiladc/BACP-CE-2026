@@ -56,7 +56,7 @@ vector<int> getCourseParents(int id_course) {
 void buildCoursePeriodRelationship(individual& ind, int id_course) {
     int p = 0;
 
-    for (int _p = 0; _p < ind.courses.size(); _p++){
+    for (int _p = 0; _p < static_cast<int>(ind.courses.size()); _p++){
         if (find(ind.courses[_p].begin(), ind.courses[_p].end(), id_course) == ind.courses[_p].end())
             continue;
         p = _p;
@@ -72,7 +72,7 @@ void buildCoursePeriodRelationship(individual& ind, int id_course) {
 
     int parent_period = p;
     for(auto& child_course : _children) {
-        for (int _p = 0; _p < ind.courses.size(); _p++){
+        for (int _p = 0; _p < static_cast<int>(ind.courses.size()); _p++){
             if (find(ind.courses[_p].begin(), ind.courses[_p].end(), child_course) == ind.courses[_p].end())
                 continue;
             p = _p;

@@ -10,7 +10,7 @@ void evaluatePop(vector<individual> &pop){
         // obj_period = (sum(CR_courses_period) - MEAN_credits_periods) ^ 2
 
         // get total credits per period
-        const size_t total_periods = ind.courses.size();
+        const int total_periods = static_cast<int>(ind.courses.size());
         std::vector<int> total_credits_per_period(total_periods);
         for (int i = 0; i < total_periods; ++i) 
             total_credits_per_period[i] = std::accumulate(
@@ -87,7 +87,7 @@ individual selection(vector<individual> &old_pop){
     float r = getRandomProb();
     float cum_prob = 0.0;
 
-    for (int i = 0; i < old_pop.size(); ++i) {
+    for (int i = 0; i < static_cast<int>(old_pop.size()); ++i) {
         cum_prob += selection_probs[i];
         if (cum_prob >= r && old_pop[i].is_feasible) 
             return old_pop[i];
@@ -97,9 +97,7 @@ individual selection(vector<individual> &old_pop){
     default: return individual with best fitness that is feasible
     @note: is this the best way to select an individual if the previous loop fails?
     */
-    int max_fit_idx = 0;
-
-    for (int i = 0; i < selection_probs.size(); i++)
+    for (int i = 0; i < static_cast<int>(selection_probs.size()); i++)
         if (!old_pop[i].is_feasible)
             selection_probs[i] = 0.0F;
     
@@ -114,8 +112,6 @@ individual selection(vector<individual> &old_pop){
 void generateNewPop(vector<individual> &old_pop){
 
     vector<int> a1(params.popsize+1), a2(params.popsize+1);
-    int temp;
-    int rand;
     individual parent1, parent2;
     vector<individual> new_pop(params.popsize), children;
 

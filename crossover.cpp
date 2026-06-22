@@ -30,7 +30,7 @@ void inherit(individual& parent1, individual& parent2, individual& child, int ro
             continue;
 
         int p = it->second[0].second;
-        if (p > child.courses.size()-1)
+        if (p > static_cast<int>(child.courses.size())-1)
             _tmp_p1.course_children_period[id_course][0].second = child.courses.size()-1;
     }
 

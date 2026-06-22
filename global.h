@@ -28,6 +28,8 @@ struct hyperparams{
     int elite;
     float cross_prob;
     float mut_prob;
+    float mut_branch_prob;
+    float mut_insert_prob;
 };
 
 /* ------------- FUNCTION PROTOTYPES ---------------------*/
@@ -72,7 +74,8 @@ void trimTrailingEmptyPeriods(individual& ind);
 
 // Writer functions
 void writeInd(individual &ind);
-
+void reportBest(int gen, std::vector<individual>& pop, std::ofstream& out);
+void reportSolutions(int top, std::vector<individual>& pop, std::ofstream& out);
 
 /* ------------- GLOBAL VARIABLES ---------------------*/
 

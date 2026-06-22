@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include <fstream>
 
 #include "global.h"
 using namespace std;
@@ -34,4 +35,38 @@ void writeInd(individual &ind){
         cout << endl;
     }
     cout << endl;
+}
+
+void reportBest(int gen, vector<individual>& pop, ofstream& out) {
+    vector<individual> aux_pop = pop;
+
+    sort(aux_pop.begin(), aux_pop.end(), fitnessComparisonAsc);
+    individual best;
+    for (const individual& ind : aux_pop) {
+        if (ind.is_feasible){
+            best = ind;
+            break;
+        }
+    }
+    out << gen << ";" << best.fitness[0] << endl;
+}
+
+void reportSolutions(int top, vector<individual>& pop, ofstream& out) {
+    vector<individual> aux_pop = pop;
+    sort(aux_pop.begin(), aux_pop.end(), fitnessComparisonAsc);
+    
+    for (int t = 0; t < top; t++) {
+        individual ind = aux_pop[t];
+        for(int p = 0; p < static_cast<int>(ind.courses.size()); p++) {
+            out << t+1 << ";" << p+1 << ";";
+            for (int i = 0; i < static_cast<int>(ind.courses[p].size()) - 1; i++)
+                out << course_names[ind.courses[p][i]] << ",";
+            out << course_names[ind.courses[p][ind.courses[p].size()-1]] << ";";
+            int total_credits = accumulate(
+                ind.courses[p].begin(), ind.courses[p].end(),
+                0, [] (int sum, int cid) { return sum + course_credits[cid]; }
+            );
+            out << total_credits << ";" << ind.period_fitness[p] << endl;
+        }
+    }
 }

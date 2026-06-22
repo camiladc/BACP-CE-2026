@@ -207,6 +207,7 @@ void readInstance(ifstream &base_file, ifstream& case_file){
     cout << "Loading student specific case...\n";
 
     string content_case;
+    line.clear();
     while (getline(case_file, line)) {
         content_case += line;
         content_case.push_back('\n');
@@ -228,5 +229,7 @@ void readInstance(ifstream &base_file, ifstream& case_file){
     } else {
         cerr << "Error: could not read courses list." << endl;
     }
+
+    cout << "Case loaded: " << remaining_courses.size() << " courses, " << remaining_periods << " remaining periods.\n";
 }
 

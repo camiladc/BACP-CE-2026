@@ -1,9 +1,13 @@
 #include<bits/stdc++.h>
 #include <fstream>
 #include <chrono>
+#include <format>
+#include <errno.h>
+#include <filesystem>
 
 #include "global.h"
 using namespace std;
+namespace fs = std::filesystem;
 
 // Hyperparams declaration
 hyperparams params;
@@ -13,15 +17,45 @@ mt19937 rng;
 
 int main(int argc, char *argv[]){
 
-    if(argc < 6){
-        cout << "Usage:\n./main base_instance_path case_instance_path seed max_gen popsize cross_prob mut_prob \n";
+    if(argc < 9){
+        cout << "Usage:\n./main base_instance_path case_instance_path seed max_gen popsize cross_prob mut_prob mut_branch_prob mut_ins_prob \n";
         exit(1);
     }
 
     // Assign the path
+    // inputs
     string base_path = argv[1];
     string case_path = argv[2];
-  
+
+    //outputs
+    string case_stem = fs::path(case_path).stem().string();
+    string f_convergence = format("convergence_results/convergence_{}.csv", case_stem); // convergence graph
+    string f_sol = format("solutions/solutions_{}.csv", case_stem); // formated solution as csv
+    
+    ofstream conv(f_convergence, ios::out);
+    ofstream solution(f_sol, ios::out);
+
+    if(conv.is_open())
+    {
+        conv.flush();
+    }
+    else
+    {
+        cerr << "Failed to create file" << f_convergence << ": " << errno << endl;
+    }
+
+    if(solution.is_open())
+    {
+        solution.flush();
+    }
+    else
+    {
+        cerr << "Failed to create file" << f_sol << ": " << errno << endl;
+    }
+    
+    conv << "# gen;best_fit\n";
+    solution << "id_sol;period;courses;total_credits;period_fit\n";
+
     // Assign the seed
     int seed = atoi(argv[3]);
     randomize(seed);
@@ -31,8 +65,11 @@ int main(int argc, char *argv[]){
     params.popsize = atoi(argv[5]);
     params.cross_prob = stof(argv[6]);
     params.mut_prob = stof(argv[7]);
+    params.mut_branch_prob = stof(argv[8]);
+    params.mut_insert_prob = stof(argv[9]);
     params.elite = 1;
-    
+
+    int top_sols_to_report = 5; //popsize; //<- to report all final solutions
     // Reading the instance file
     ifstream file_base(base_path);
     ifstream file_case(case_path);
@@ -61,6 +98,7 @@ int main(int argc, char *argv[]){
     {      
         generateNewPop(pop);
         evaluatePop(pop);
+        reportBest(i,pop,conv);
     }
 
     // End the timer
@@ -72,11 +110,15 @@ int main(int argc, char *argv[]){
     sort(pop.begin(), pop.end(), fitnessComparisonAsc);
     cout << "\nBest solution found:" << endl;
     writeInd(pop[0]);
+    cout << "\nReporting top " << top_sols_to_report << " solutions..." << endl;
+    reportSolutions(top_sols_to_report,pop,solution);
     
     cout<<endl<<"Time elapsed: "<<elapsed.count()<<" seconds"<<endl;
 
     file_base.close();
     file_case.close();
+    conv.close();
+    solution.close();
 
     return 0;
 

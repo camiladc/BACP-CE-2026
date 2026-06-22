@@ -148,10 +148,11 @@ static bool mutateRemovePeriod(individual& ind) {
 void mutation(individual& parent1) {
     individual backup = parent1;
     bool ok = false;
+    float r = getRandomProb();
 
-    if (getRandomProb() <= 0.5f)
+    if (r <= params.mut_branch_prob)
         ok = mutateBranchShift(parent1);
-    else if (getRandomProb() <= 0.5f)
+    else if (r <= params.mut_insert_prob)
         ok = mutateInsertPeriod(parent1);
     else
         ok = mutateRemovePeriod(parent1);
