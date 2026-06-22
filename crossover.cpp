@@ -21,10 +21,15 @@ void inherit(individual& parent1, individual& parent2, individual& child, int ro
     );
 
     // temporal copy of p1
-    individual _tmp_p1 = parent1; 
+    individual _tmp_p1 = parent1;
+    syncCourseChildrenPeriod(_tmp_p1);
 
     for (const auto& id_course : courses_not_enrolled) {
-        int p = _tmp_p1.course_children_period[id_course][0].second;
+        auto it = _tmp_p1.course_children_period.find(id_course);
+        if (it == _tmp_p1.course_children_period.end() || it->second.empty())
+            continue;
+
+        int p = it->second[0].second;
         if (p > child.courses.size()-1)
             _tmp_p1.course_children_period[id_course][0].second = child.courses.size()-1;
     }
@@ -37,10 +42,16 @@ void inherit(individual& parent1, individual& parent2, individual& child, int ro
 
 // inherit random prereq tree between two parents, ensuring that all constraints are still satisfied
 vector<individual> crossover(individual &parent1, individual &parent2){
-    // select random course and 
-    vector<int> root_courses = getRootCourses(), sampled;
-    
+    vector<int> root_courses = getRootCourses();
+    if (root_courses.empty()) {
+        return vector<individual> {parent1, parent2};
+    }
+
+    vector<int> sampled;
     sample(root_courses.begin(), root_courses.end(), back_inserter(sampled), 1, rng);
+    if (sampled.empty()) {
+        return vector<individual> {parent1, parent2};
+    }
     int sampled_course = sampled[0];
     
     individual child1, child2;

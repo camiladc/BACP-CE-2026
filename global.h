@@ -58,6 +58,18 @@ std::vector<int> getCourseParents(int id_course);
 void buildCoursePeriodRelationship(individual& ind, int id_course);
 void setCoursePeriodRelationship(individual& parent, individual& child, int id_course, std::vector<int>& courses_enrolled);
 
+int maxAllowedPeriods();
+int getCoursePeriod(const individual& ind, int course);
+int periodLoad(const individual& ind, int period, int skipCourse = -1);
+int periodCourseCount(const individual& ind, int period, int skipCourse = -1);
+int earliestFeasiblePeriod(int course, const individual& ind);
+bool canPlaceCourse(const individual& ind, int course, int period, int skipCourse = -1);
+bool validateIndividual(const individual& ind);
+void syncCourseChildrenPeriod(individual& ind);
+void collectBranchCourses(int root, std::vector<int>& out);
+void removeCourseFromPeriod(individual& ind, int course, int period);
+void trimTrailingEmptyPeriods(individual& ind);
+
 // Writer functions
 void writeInd(individual &ind);
 

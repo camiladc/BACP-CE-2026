@@ -67,11 +67,18 @@ void readInstance(ifstream &base_file, ifstream& case_file){
         while (true) {
             pos = content.find(key, pos);
             if (pos == string::npos) return string::npos;
-            if (pos + key.size() >= content.size() || content[pos + key.size()] != '=') {
+            if (pos > 0 && (isalnum((unsigned char)content[pos - 1]) || content[pos - 1] == '_')) {
                 pos += key.size();
                 continue;
             }
-            if (pos > 0 && (isalnum((unsigned char)content[pos - 1]) || content[pos - 1] == '_')) {
+            if (pos + key.size() >= content.size()) {
+                pos += key.size();
+                continue;
+            }
+            size_t afterKey = pos + key.size();
+            while (afterKey < content.size() && isspace((unsigned char)content[afterKey]))
+                ++afterKey;
+            if (afterKey >= content.size() || content[afterKey] != '=') {
                 pos += key.size();
                 continue;
             }
@@ -200,7 +207,7 @@ void readInstance(ifstream &base_file, ifstream& case_file){
     cout << "Loading student specific case...\n";
 
     string content_case;
-    while (getline(base_file, line)) {
+    while (getline(case_file, line)) {
         content_case += line;
         content_case.push_back('\n');
     }

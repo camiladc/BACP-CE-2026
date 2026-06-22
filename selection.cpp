@@ -6,6 +6,7 @@ using namespace std;
 // Function to evaluate the fitness of each individual in the population
 void evaluatePop(vector<individual> &pop){
     for (auto& ind: pop) {
+        ind.is_feasible = true;
         // obj_period = (sum(CR_courses_period) - MEAN_credits_periods) ^ 2
 
         // get total credits per period
