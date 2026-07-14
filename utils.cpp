@@ -7,12 +7,12 @@ using namespace std;
 vector<int> getRootCourses() {
     vector<int> root_courses;
     root_courses.clear();
-    for (const auto& course: remaining_courses) {
+    for (const auto& course: course_names) {
         int is_root = 1;
         // for each prerequisite of the course...
         for(const auto& prereq: prereq_adj[course_index[course]]) {
             // if the student has yet to attend the prerequisite, then the course is not a root..
-            if (find(remaining_courses.begin(), remaining_courses.end(), course_names[prereq]) != remaining_courses.end()){
+            if (find(course_names.begin(), course_names.end(), course_names[prereq]) != course_names.end()){
                 is_root = 0;
                 break;
             }
@@ -30,7 +30,7 @@ vector<int> getChildrenCourses(int id_course) {
     vector<int> children;
     children.clear();
 
-    for (const auto& course: remaining_courses) {
+    for (const auto& course: course_names) {
         if (find(prereq_adj[course_index[course]].begin(), prereq_adj[course_index[course]].end(), id_course) != prereq_adj[course_index[course]].end()) {
             children.push_back(course_index[course]);
         }
@@ -44,7 +44,7 @@ vector<int> getCourseParents(int id_course) {
     parents.clear();
 
     for(const auto& parent : prereq_adj[id_course]) {
-        if (find(remaining_courses.begin(), remaining_courses.end(), course_names[parent]) != remaining_courses.end()) {
+        if (find(course_names.begin(), course_names.end(), course_names[parent]) != course_names.end()) {
             parents.push_back(parent);
         }
     }
@@ -97,55 +97,46 @@ void setCoursePeriodRelationship(individual& parent, individual& child, int id_c
     if (find(courses_enrolled.begin(), courses_enrolled.end(), id_course) != courses_enrolled.end())
         return;
 
-    auto addEnrolled = [&](int course) {
-        if (find(courses_enrolled.begin(), courses_enrolled.end(), course) == courses_enrolled.end())
-            courses_enrolled.push_back(course);
-    };
-
     auto ensureRelationship = [&](int course) {
         auto it = parent.course_children_period.find(course);
         if (it == parent.course_children_period.end() || it->second.empty()) {
             buildCoursePeriodRelationship(parent, course);
         }
     };
+    
+    ensureRelationship(id_course);
+    auto it = parent.course_children_period.find(id_course);
+    if (it == parent.course_children_period.end() || it->second.empty())
+        return;
+    
+    int p = it->second[0].second;
+    if (p >= static_cast<int>(child.courses.size()))
+        child.courses.resize(p + 1);
+    if (find(child.courses[p].begin(), child.courses[p].end(), id_course) == child.courses[p].end())
+        child.courses[p].push_back(id_course);
+    
+    courses_enrolled.push_back(id_course);
 
     auto _parents = getCourseParents(id_course);
     auto _children = getChildrenCourses(id_course);
 
-    ensureRelationship(id_course);
 
     for (auto& parent_course : _parents) {
-        ensureRelationship(parent_course);
-        int p = parent.course_children_period[parent_course][0].second;
-        if (p >= static_cast<int>(child.courses.size()))
-            child.courses.resize(p + 1);
-        if (find(child.courses[p].begin(), child.courses[p].end(), parent_course) == child.courses[p].end()) {
-            child.courses[p].push_back(parent_course);
-        }
-        addEnrolled(parent_course);
         setCoursePeriodRelationship(parent, child, parent_course, courses_enrolled);
     }
 
     for (auto& child_course: _children) {
-        ensureRelationship(child_course);
-        int p = parent.course_children_period[child_course][0].second;
-        if (p >= static_cast<int>(child.courses.size()))
-            child.courses.resize(p + 1);
-        if (find(child.courses[p].begin(), child.courses[p].end(), child_course) == child.courses[p].end()){
-            child.courses[p].push_back(child_course);
-        }
-        addEnrolled(child_course);
         setCoursePeriodRelationship(parent, child, child_course, courses_enrolled);
     }
 }
 
 static bool isRemainingCourseId(int course) {
-    return find(remaining_courses.begin(), remaining_courses.end(), course_names[course])
-        != remaining_courses.end();
+    return find(course_names.begin(), course_names.end(), course_names[course])
+        != course_names.end();
 }
 
 int maxAllowedPeriods() {
-    return static_cast<int>(lround(num_periods * 2.5));
+    return static_cast<int>(lround(num_periods * period_multiplier));
 }
 
 int getCoursePeriod(const individual& ind, int course) {
@@ -223,7 +214,7 @@ bool validateIndividual(const individual& ind) {
     if (static_cast<int>(ind.courses.size()) > maxAllowedPeriods())
         return false;
 
-    for (const auto& courseName : remaining_courses) {
+    for (const auto& courseName : course_names) {
         int course = course_index[courseName];
         if (getCoursePeriod(ind, course) < 0)
             return false;
@@ -236,7 +227,7 @@ bool validateIndividual(const individual& ind) {
             return false;
     }
 
-    for (const auto& courseName : remaining_courses) {
+    for (const auto& courseName : course_names) {
         int course = course_index[courseName];
         int coursePeriod = getCoursePeriod(ind, course);
         for (int prereq : prereq_adj[course]) {
@@ -254,7 +245,7 @@ bool validateIndividual(const individual& ind) {
 void syncCourseChildrenPeriod(individual& ind) {
     ind.is_feasible = true;
     ind.course_children_period.clear();
-    for (const auto& course : remaining_courses) {
+    for (const auto& course : course_names) {
         buildCoursePeriodRelationship(ind, course_index[course]);
     }
 }

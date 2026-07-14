@@ -17,7 +17,7 @@ individual initialize_ind(){
     vector<int> remaining_prereqs(num_courses, 0);
     vector<vector<int>> dependents(num_courses);
     for (const auto &pr : prerequisites) {
-        if (pr.first >= 0 && pr.first < num_courses && pr.second >= 0 && pr.second < num_courses && find(remaining_courses.begin(), remaining_courses.end(), course_names[pr.first]) != remaining_courses.end()) {
+        if (pr.first >= 0 && pr.first < num_courses && pr.second >= 0 && pr.second < num_courses) {
             remaining_prereqs[pr.first]++;
             dependents[pr.second].push_back(pr.first);
         }
@@ -26,9 +26,9 @@ individual initialize_ind(){
     // Initialize the ready list with courses that have no prerequisites
     vector<int> ready;
     ready.reserve(num_courses);
-    for (const string& course: remaining_courses) {
-        if (remaining_prereqs[course_index[course]] == 0) {
-            ready.push_back(course_index[course]);
+    for (int course = 0; course < num_courses; ++course) {
+        if (remaining_prereqs[course] == 0) {
+            ready.push_back(course);
         }
     }
 

@@ -1,3 +1,4 @@
+#include <algorithm>
 #include<bits/stdc++.h>
 
 #include "global.h"
@@ -23,19 +24,18 @@ void evaluatePop(vector<individual> &pop){
             total_credits_per_period.begin(),
             total_credits_per_period.end(),
             (float) 0.0
-        ) / total_periods;
-
+        ) / num_periods;
+        float surplus = MEAN_credits * MEAN_credits;
+        
         ind.period_fitness.clear();
         ind.period_fitness.resize(total_periods);
-
-        // set the variance of each period
-        std::transform(
-            total_credits_per_period.begin(), total_credits_per_period.end(),
-            ind.period_fitness.begin(), [MEAN_credits] (int val) {
-                float diff = val - MEAN_credits;
-                return powf(diff, (float) 2.0);
-            }
-        );
+        
+        for (int i = 0; i < total_periods; i++) {
+            float diff = total_credits_per_period[i] - MEAN_credits;
+            ind.period_fitness[i] = diff * diff;
+            if (i >= maxAllowedPeriods())
+                ind.period_fitness[i] += surplus;
+        }
 
         // final fitness is the total variance
         ind.fitness[0] = std::accumulate(ind.period_fitness.begin(), ind.period_fitness.end(), (float) 0.0);
@@ -43,7 +43,7 @@ void evaluatePop(vector<individual> &pop){
         // assign course-period relationship in individual
         ind.course_children_period.clear();
         vector<int> root_courses = getRootCourses();
-        for(const auto& course: remaining_courses) {
+        for(const auto& course: course_names) {
             int id_course = course_index[course];
             buildCoursePeriodRelationship(ind, id_course);
         }

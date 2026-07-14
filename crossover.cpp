@@ -10,13 +10,17 @@ void inherit(individual& parent1, individual& parent2, individual& child, int ro
     setCoursePeriodRelationship(parent2, child, root_course, courses_enrolled);
 
     vector<int> total_courses, courses_not_enrolled;
-    for(const auto& course: remaining_courses)
+    for(const auto& course: course_names)
         total_courses.push_back(course_index[course]);
+    
+    vector<int> enrolled_sorted(courses_enrolled);
+    sort(enrolled_sorted.begin(), enrolled_sorted.end());
+    sort(total_courses.begin(), total_courses.end());
     
     // courses to inherit from p1 is the set TotalCourses \ EnrolledCourses
     std::set_difference(
         total_courses.begin(), total_courses.end(),
-        courses_enrolled.begin(), courses_enrolled.end(),
+        enrolled_sorted.begin(), enrolled_sorted.end(),
         back_inserter(courses_not_enrolled)
     );
 

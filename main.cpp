@@ -11,6 +11,8 @@ namespace fs = std::filesystem;
 
 // Hyperparams declaration
 hyperparams params;
+// period multiplier
+float period_multiplier = 1.5;
 
 // Random number generator declaration
 mt19937 rng;
@@ -18,19 +20,18 @@ mt19937 rng;
 int main(int argc, char *argv[]){
 
     if(argc < 9){
-        cout << "Usage:\n./main base_instance_path case_instance_path seed max_gen popsize cross_prob mut_prob mut_branch_prob mut_ins_prob \n";
+        cout << "Usage:\n./main base_instance_path seed max_gen popsize period_multiplier cross_prob mut_prob mut_branch_prob mut_ins_prob \n";
         exit(1);
     }
 
     // Assign the path
     // inputs
     string base_path = argv[1];
-    string case_path = argv[2];
 
     //outputs
-    string case_stem = fs::path(case_path).stem().string();
-    string f_convergence = format("convergence_results/convergence_{}.csv", case_stem); // convergence graph
-    string f_sol = format("solutions/solutions_{}.csv", case_stem); // formated solution as csv
+    string stem = fs::path(base_path).stem().string();
+    string f_convergence = format("convergence_results/convergence_{}.csv", stem); // convergence graph
+    string f_sol = format("solutions/solutions_{}.csv", stem); // formated solution as csv
     
     ofstream conv(f_convergence, ios::out);
     ofstream solution(f_sol, ios::out);
@@ -54,15 +55,16 @@ int main(int argc, char *argv[]){
     }
     
     conv << "# gen;best_fit\n";
-    solution << "id_sol;period;courses;total_credits;period_fit\n";
+    solution << "id_sol;period;courses;total_credits;period_fit;total_fit\n";
 
     // Assign the seed
-    int seed = atoi(argv[3]);
+    int seed = atoi(argv[2]);
     randomize(seed);
-
+    
     // Define the hyperparameters
-    params.max_gen = atoi(argv[4]);
-    params.popsize = atoi(argv[5]);
+    params.max_gen = atoi(argv[3]);
+    params.popsize = atoi(argv[4]);
+    period_multiplier = stof(argv[5]);
     params.cross_prob = stof(argv[6]);
     params.mut_prob = stof(argv[7]);
     params.mut_branch_prob = stof(argv[8]);
@@ -72,20 +74,14 @@ int main(int argc, char *argv[]){
     int top_sols_to_report = 5; //popsize; //<- to report all final solutions
     // Reading the instance file
     ifstream file_base(base_path);
-    ifstream file_case(case_path);
 
     if(!file_base.is_open()){
         cout << "\nCannot open file: " << base_path << endl;
         exit(1);
     }
 
-    if (!file_case.is_open()) {
-        cerr << "\nCannot open file: " << case_path << endl;
-        exit(1);
-    }
-
-    cout << "Reading instance: " << case_path << "\n";
-    readInstance(file_base, file_case);
+    cout << "Reading instance: " << base_path << "\n";
+    readInstance(file_base);
     
     // Start the timer
     auto start = chrono::high_resolution_clock::now();
@@ -111,12 +107,11 @@ int main(int argc, char *argv[]){
     cout << "\nBest solution found:" << endl;
     writeInd(pop[0]);
     cout << "\nReporting top " << top_sols_to_report << " solutions..." << endl;
-    reportSolutions(top_sols_to_report,pop,solution);
+    reportSolutions(pop,solution);
     
     cout<<endl<<"Time elapsed: "<<elapsed.count()<<" seconds"<<endl;
 
     file_base.close();
-    file_case.close();
     conv.close();
     solution.close();
 

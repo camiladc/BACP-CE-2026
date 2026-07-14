@@ -15,8 +15,6 @@ vector<int> course_credits;
 vector<pair<int,int>> prerequisites;
 unordered_map<string,int> course_index;
 vector<vector<int>> prereq_adj;
-int remaining_periods;
-vector<string> remaining_courses;
 
 // Remove leading and trailing whitespace from a string
 static string trim(const string &s) {
@@ -52,7 +50,7 @@ static size_t findMatchingDelimiter(const string &text, size_t openPos, char ope
 // The function reads the instance file, and extracts the
 // scalar parameters p, a, b, c, d as well as the course list, credit list,
 // and prerequisite pairs
-void readInstance(ifstream &base_file, ifstream& case_file){
+void readInstance(ifstream &base_file){
     // Read the entire file into a single string so we can parse it flexibly
     string content_base;
     string line;
@@ -205,31 +203,5 @@ void readInstance(ifstream &base_file, ifstream& case_file){
 
     cout << "Base instance loaded: " << num_courses << " courses, " << prerequisites.size() << " prerequisites, " << num_periods << " periods." << endl;
     cout << "Loading student specific case...\n";
-
-    string content_case;
-    line.clear();
-    while (getline(case_file, line)) {
-        content_case += line;
-        content_case.push_back('\n');
-    }
-
-    if (!parseInt("p", remaining_periods, content_case)) {
-        cerr << "Error: could not read remaining periods for student." << endl;
-    }
-
-    block.clear();
-    remaining_courses.clear();
-    if (parseBlock("courses", content_case,'{', '}', block)) {
-        string token;
-        stringstream ss(block);
-        while (getline(ss, token, ',')) {
-            string name = trim(token);
-            if (!name.empty()) remaining_courses.push_back(name);
-        }
-    } else {
-        cerr << "Error: could not read courses list." << endl;
-    }
-
-    cout << "Case loaded: " << remaining_courses.size() << " courses, " << remaining_periods << " remaining periods.\n";
 }
 
