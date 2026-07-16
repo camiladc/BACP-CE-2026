@@ -1,2 +1,5 @@
-bacp7_diego.dat
-bacp10_diego.dat
+bacp7_diego.dat 6.85714
+bacp10_diego.dat 4.98998
+bacp8.dat 1.875
+bacp10.dat 2.4
+bacp12.dat 0
