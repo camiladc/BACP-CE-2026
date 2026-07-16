@@ -1,0 +1,42 @@
+p=7;
+a=10;
+b=35;
+c=2;
+d=10;
+
+courses = {
+inf245, fis140, inf280, inf270, inf3, inf236,
+inf246, inf276, inf221, inf292, inf4, inf225,
+inf256, icn270, inf285, inf293, inf5, inf322,
+inf343, inf301, inf295, inf266, inf6, inf302,
+inf303, inf311, inf312, inf360, inf7, inf304,
+inf313, inf314, inf228, inf309, inf310
+};
+
+credit = [
+5, 8, 5, 5, 2, 5, 5, 
+5, 5, 5, 2, 5, 5, 5, 
+5, 5, 2, 5, 5, 5, 5, 
+5, 2, 5, 5, 5, 5, 5, 
+2, 5, 5, 5, 10, 2, 20
+];
+
+prereq = {
+<inf246, inf245>,
+<inf276, inf270>,
+<inf225, inf236>,
+<inf256, inf246>,
+<inf285, inf221>,
+<inf293, inf280>,
+<inf293, inf292>,
+<inf322, inf225>,
+<inf343, inf256>,
+<inf295, inf292>,
+<inf266, inf276>,
+<inf360, inf322>,
+<inf360, inf266>,
+<inf228, inf360>,
+<inf309, inf360>,
+<inf310, inf228>,
+<inf310, inf309>
+};
