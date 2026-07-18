@@ -35,16 +35,22 @@ while [ $# != 0 ]; do
               mut_prob=$arg
             fi
             ;;
+        -mut_move_course_prob) if [ $# -gt 1 ]; then
+              arg="$2"
+              shift
+              mut_move_course_prob=$arg
+            fi
+            ;;
         -mut_branch_prob) if [ $# -gt 1 ]; then
               arg="$2"
               shift
               mut_branch_prob=$arg
             fi
             ;;
-        -mut_ins_prob) if [ $# -gt 1 ]; then
+        -mut_insert_prob) if [ $# -gt 1 ]; then
               arg="$2"
               shift
-              mut_ins_prob=$arg
+              mut_insert_prob=$arg
             fi
             ;;
         *) echo "Unrecognized flag or argument: $flag"
@@ -55,9 +61,9 @@ done
 
 #max_iter=$(awk "BEGIN {printf \"%d\",(${evaluaciones}/${max_gen})}")
 
-#max_gen popsize period_multiplier cross_prob mut_prob mut_branch_prob mut_ins_prob
+#max_gen popsize period_multiplier cross_prob mut_prob mut_move_course_prob mut_branch_prob mut_insert_prob
 
-params="${max_gen} ${popsize} 1 ${cross_prob} ${mut_prob} ${mut_branch_prob} ${mut_ins_prob}"
+params="${max_gen} ${popsize} 1 ${cross_prob} ${mut_prob} ${mut_move_course_prob} ${mut_branch_prob} ${mut_insert_prob}"
 screen=instance_output
 
 rm -rf ${screen}

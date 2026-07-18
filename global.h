@@ -20,6 +20,9 @@ struct individual
     // Per semester fitness value
     std::vector<float> period_fitness;
 
+    // Per semester credits load
+    std::vector<int> total_credits_per_period;
+
 };
 
 struct hyperparams{
@@ -28,6 +31,7 @@ struct hyperparams{
     int elite;
     float cross_prob;
     float mut_prob;
+    float mut_move_course_prob;
     float mut_branch_prob;
     float mut_insert_prob;
 };
@@ -71,6 +75,7 @@ void syncCourseChildrenPeriod(individual& ind);
 void collectBranchCourses(int root, std::vector<int>& out);
 void removeCourseFromPeriod(individual& ind, int course, int period);
 void trimTrailingEmptyPeriods(individual& ind);
+bool tryMoveCourse(individual& ind, int course, int fromPeriod, int toPeriod);
 
 // Writer functions
 void writeInd(individual &ind);

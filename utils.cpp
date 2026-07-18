@@ -211,6 +211,9 @@ bool canPlaceCourse(const individual& ind, int course, int period, int skipCours
 }
 
 bool validateIndividual(const individual& ind) {
+    if ((period_multiplier == 1) && (static_cast<int>(ind.courses.size()) < num_periods))
+        return false;
+
     if (static_cast<int>(ind.courses.size()) > maxAllowedPeriods())
         return false;
 
@@ -279,4 +282,17 @@ void removeCourseFromPeriod(individual& ind, int course, int period) {
 void trimTrailingEmptyPeriods(individual& ind) {
     while (!ind.courses.empty() && ind.courses.back().empty())
         ind.courses.pop_back();
+}
+
+bool tryMoveCourse(individual& ind, int course, int fromPeriod, int toPeriod) {
+    if (fromPeriod == toPeriod)
+        return false;
+    if (toPeriod < 0 || toPeriod >= static_cast<int>(ind.courses.size()))
+        return false;
+    if (!canPlaceCourse(ind, course, toPeriod, course))
+        return false;
+
+    removeCourseFromPeriod(ind, course, fromPeriod);
+    ind.courses[toPeriod].push_back(course);
+    return true;
 }

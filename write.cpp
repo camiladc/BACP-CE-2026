@@ -61,12 +61,7 @@ void reportSolutions(vector<individual>& pop, ofstream& out) {
             out << t+1 << ";" << p+1 << ";";
             for (int i = 0; i < static_cast<int>(ind.courses[p].size()); i++)
                 out << course_names[ind.courses[p][i]] << ",";
-            out << ";";
-            int total_credits = accumulate(
-                ind.courses[p].begin(), ind.courses[p].end(),
-                0, [] (int sum, int cid) { return sum + course_credits[cid]; }
-            );
-            out << total_credits << ";" << ind.period_fitness[p] << ";" << ind.fitness[0] << endl;
+            out << ";" << ind.total_credits_per_period[p] << ";" << ind.period_fitness[p] << ";" << ind.fitness[0] << endl;
         }
     }
 }

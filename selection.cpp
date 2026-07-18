@@ -10,28 +10,30 @@ void evaluatePop(vector<individual> &pop){
         ind.is_feasible = true;
         // obj_period = (sum(CR_courses_period) - MEAN_credits_periods) ^ 2
 
+        
         // get total credits per period
         const int total_periods = static_cast<int>(ind.courses.size());
-        std::vector<int> total_credits_per_period(total_periods);
+        ind.total_credits_per_period.clear();
+        ind.total_credits_per_period.resize(total_periods);
         for (int i = 0; i < total_periods; ++i) 
-            total_credits_per_period[i] = std::accumulate(
+            ind.total_credits_per_period[i] = std::accumulate(
                 ind.courses[i].begin(), ind.courses[i].end(),
                 0, [] (int sum, int cid) { return sum + course_credits[cid]; }
             );
 
-        // get mean credits of current programming
+        // get mean credits of current programming considering the number of periods in the individual
         float MEAN_credits = std::accumulate(
-            total_credits_per_period.begin(),
-            total_credits_per_period.end(),
+            ind.total_credits_per_period.begin(),
+            ind.total_credits_per_period.end(),
             (float) 0.0
-        ) / num_periods;
+        ) / ind.total_credits_per_period.size();
         float surplus = MEAN_credits * MEAN_credits;
         
         ind.period_fitness.clear();
         ind.period_fitness.resize(total_periods);
         
         for (int i = 0; i < total_periods; i++) {
-            float diff = total_credits_per_period[i] - MEAN_credits;
+            float diff = ind.total_credits_per_period[i] - MEAN_credits;
             ind.period_fitness[i] = diff * diff;
             if (i >= maxAllowedPeriods())
                 ind.period_fitness[i] += surplus;

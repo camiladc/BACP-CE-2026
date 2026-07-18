@@ -10,6 +10,7 @@ individual initialize_ind(){
     new_ind.courses.clear();
     new_ind.fitness[0] = 0.0;
     new_ind.period_fitness.clear();
+    new_ind.total_credits_per_period.clear();
 
     // Build prerequisite counters and dependent lists for each course
     // remaining_prereqs[c] is the number of prereqs still unscheduled for course c
@@ -99,6 +100,29 @@ individual initialize_ind(){
         for (int child : dependents[course]) {
             if (--remaining_prereqs[child] == 0) {
                 ready.push_back(child);
+            }
+        }
+    }
+
+    // if period_multiplier is 1, ensure that the number of periods is at least num_periods and relocate the least amount of courses without prerequisites to the new empty periods
+    if (period_multiplier == 1 && static_cast<int>(new_ind.courses.size()) < num_periods) {
+        new_ind.courses.resize(num_periods);
+        period_load.resize(num_periods, 0);
+        period_count.resize(num_periods, 0);
+        
+        // Iterate over the new empty periods and move one course without prerequisites from a previous period to the new empty period using tryMoveCourse function
+        for (int p = 0; p < num_periods; ++p) {
+            if (!new_ind.courses[p].empty())
+                continue;   
+            
+            for (int prev_p = 0; prev_p < p; ++prev_p) {
+                for (int course : new_ind.courses[prev_p]) {
+                    if (prereq_adj[course].empty()) {
+                        if (tryMoveCourse(new_ind, course, prev_p, p)) {
+                            break;  
+                        }
+                    }
+                }
             }
         }
     }

@@ -19,8 +19,9 @@ mt19937 rng;
 
 int main(int argc, char *argv[]){
 
-    if(argc < 9){
-        cout << "Usage:\n./main base_instance_path seed max_gen popsize period_multiplier cross_prob mut_prob mut_branch_prob mut_ins_prob \n";
+    if(argc < 10){
+        cout << "Usage:\n./main base_instance_path seed max_gen popsize period_multiplier cross_prob mut_prob mut_move_course_prob mut_branch_prob mut_insert_prob \n";
+        cout << "Example:\n./main benchmark-instances/bacp7_diego.dat 13 800 20 1 0.2 0.8 0.7 1 0.1 \n";
         exit(1);
     }
 
@@ -33,6 +34,10 @@ int main(int argc, char *argv[]){
     string f_convergence = format("convergence_results/convergence_{}.csv", stem); // convergence graph
     string f_sol = format("solutions/solutions_{}.csv", stem); // formated solution as csv
     
+    // create output directories if they don't exist
+    fs::create_directories("convergence_results");
+    fs::create_directories("solutions");
+
     ofstream conv(f_convergence, ios::out);
     ofstream solution(f_sol, ios::out);
 
@@ -67,8 +72,9 @@ int main(int argc, char *argv[]){
     period_multiplier = stof(argv[5]);
     params.cross_prob = stof(argv[6]);
     params.mut_prob = stof(argv[7]);
-    params.mut_branch_prob = stof(argv[8]);
-    params.mut_insert_prob = stof(argv[9]);
+    params.mut_move_course_prob = stof(argv[8]);
+    params.mut_branch_prob = stof(argv[9]);
+    params.mut_insert_prob = stof(argv[10]);
     params.elite = 1;
 
     int top_sols_to_report = 5; //popsize; //<- to report all final solutions

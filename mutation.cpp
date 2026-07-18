@@ -49,19 +49,6 @@ static bool mutateBranchShift(individual& ind) {
     return validateIndividual(ind);
 }
 
-static bool tryMoveCourse(individual& ind, int course, int fromPeriod, int toPeriod) {
-    if (fromPeriod == toPeriod)
-        return false;
-    if (toPeriod < 0 || toPeriod >= static_cast<int>(ind.courses.size()))
-        return false;
-    if (!canPlaceCourse(ind, course, toPeriod, course))
-        return false;
-
-    removeCourseFromPeriod(ind, course, fromPeriod);
-    ind.courses[toPeriod].push_back(course);
-    return true;
-}
-
 static bool mutateInsertPeriod(individual& ind) {
     if (static_cast<int>(ind.courses.size()) >= maxAllowedPeriods())
         return false;
@@ -145,14 +132,40 @@ static bool mutateRemovePeriod(individual& ind) {
     return validateIndividual(ind);
 }
 
+// Function to move a course from one period with greater credits to another with less, ensuring feasibility
+static bool mutateMoveCourseLowerCreditPeriod(individual& ind) {
+    if (ind.courses.size() <= 1)
+        return false;
+
+    // Get the period with maximum credits using total_credits_per_period
+    int maxCreditsPeriod = std::distance(ind.total_credits_per_period.begin(),
+        std::max_element(ind.total_credits_per_period.begin(), ind.total_credits_per_period.end()));    
+
+    // Get the period with minimun credits using total_credits_per_period
+    int minCreditsPeriod = std::distance(ind.total_credits_per_period.begin(),
+        std::min_element(ind.total_credits_per_period.begin(), ind.total_credits_per_period.end()));
+  
+    // Select a random course from the maxCreditsPeriod to move it to the minCreditsPeriod
+    int courseToMove = ind.courses[maxCreditsPeriod][getRandomInt(0, static_cast<int>(ind.courses[maxCreditsPeriod].size()) - 1)];    
+
+    // Attempt to move the selected course to the minCreditsPeriod
+    if (!tryMoveCourse(ind, courseToMove, maxCreditsPeriod, minCreditsPeriod))
+        return false;
+
+    trimTrailingEmptyPeriods(ind);
+    return validateIndividual(ind);
+}
+
 void mutation(individual& parent1) {
     individual backup = parent1;
     bool ok = false;
     float r = getRandomProb();
 
-    if (r <= params.mut_branch_prob)
+    if (r <= params.mut_move_course_prob)
+        ok = mutateMoveCourseLowerCreditPeriod(parent1);
+    else if (r <= (params.mut_branch_prob + params.mut_move_course_prob))
         ok = mutateBranchShift(parent1);
-    else if (r <= params.mut_insert_prob)
+    else if (r <= (params.mut_branch_prob + params.mut_move_course_prob + params.mut_insert_prob))
         ok = mutateInsertPeriod(parent1);
     else
         ok = mutateRemovePeriod(parent1);
