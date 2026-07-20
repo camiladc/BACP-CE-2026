@@ -1,0 +1,21 @@
+Reading instance: DBACP/2020311-9_3.txt
+Base instance loaded: 48 courses, 30 prerequisites, 8 min periods, 14 max periods.
+Loading student specific case...
+
+Best solution found:
+Solution summary:
+  Feasible: yes
+  Fitness: 0.857143
+  Periods: 7
+  Period 0 - 35 credits: inf239 inf253 inf270 inf245 inf2 fis130 inf305
+  Period 1 - 35 credits: inf312 inf236 inf276 inf314 inf313 hrw1 inf4 inf308
+  Period 2 - 35 credits: inf225 inf152 mat023 inf266 inf311 inf6 inf7 inf1 inf5
+  Period 3 - 34 credits: inf322 inf221 mat024 inf292 inf280 fis120
+  Period 4 - 35 credits: inf295 inf293 iwn170 inf360 inf246 hrw2 inf3 inf307
+  Period 5 - 35 credits: inf155 inf285 inf309 inf228 inf256 fis140
+  Period 6 - 35 credits: icn270 inf310 inf343 inf306
+
+
+Reporting top 5 solutions...
+
+Time elapsed: 48.3392 seconds

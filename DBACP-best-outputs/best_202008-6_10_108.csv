@@ -1,0 +1,15 @@
+Reading instance: DBACP/202008-6_10.txt
+Base instance loaded: 1 courses, 0 prerequisites, 1 min periods, 7 max periods.
+Loading student specific case...
+
+Best solution found:
+Solution summary:
+  Feasible: yes
+  Fitness: 0
+  Periods: 1
+  Period 0 - 20 credits: inf310
+
+
+Reporting top 5 solutions...
+
+Time elapsed: 0.218798 seconds
