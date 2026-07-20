@@ -1,0 +1,25 @@
+Reading instance: benchmark-instances/bacp11v2.dat
+Base instance loaded: 59 courses, 51 prerequisites, 11 periods.
+Loading student specific case...
+
+Best solution found:
+Solution summary:
+  Feasible: yes
+  Fitness: 3.63636
+  Periods: 11
+  Period 0 - 28 credits: iwg101 fis100 hrw132 hrw133 inf2 inf302 inf312
+  Period 1 - 28 credits: iwi131 mat021 dew100 inf1 inf3 inf5 inf6 inf313
+  Period 2 - 28 credits: inf134 inf152 fis110 inf303 inf311
+  Period 3 - 28 credits: inf253 inf239 inf260 inf155 inf245 inf4
+  Period 4 - 29 credits: inf236 inf270 inf221 mat022 inf246
+  Period 5 - 29 credits: inf225 inf276 mat023 fis120 inf256
+  Period 6 - 29 credits: inf7 inf322 inf266 mat024 inf280 inf292
+  Period 7 - 28 credits: inf360 inf285 inf295 fis130
+  Period 8 - 28 credits: inf228 inf309 iwn170 inf343 qui010
+  Period 9 - 27 credits: inf310 icn270 dew101
+  Period 10 - 28 credits: inf293 fis140 inf301 inf304 inf314
+
+
+Reporting top 5 solutions...
+
+Time elapsed: 94.9412 seconds

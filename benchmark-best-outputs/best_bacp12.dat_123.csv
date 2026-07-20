@@ -1,0 +1,26 @@
+Reading instance: benchmark-instances/bacp12.dat
+Base instance loaded: 66 courses, 65 prerequisites, 12 periods.
+Loading student specific case...
+
+Best solution found:
+Solution summary:
+  Feasible: yes
+  Fitness: 4
+  Periods: 12
+  Period 0 - 17 credits: mat121 iwi131 iwn170 ild208 hrw150 ici315
+  Period 1 - 17 credits: ili142 ili252 ili260 ili243 hrw110
+  Period 2 - 17 credits: dew100 fis100 ili231 ili273 hcw310 ici344 hrw100
+  Period 3 - 16 credits: dew101 ili134 ili237 ili274 ili363 hxwxx1
+  Period 4 - 17 credits: dewxx0 fis110 mat111 ili238 ili362
+  Period 5 - 17 credits: mat122 mat112 ili334 ili331 hcw311
+  Period 6 - 18 credits: mat113 ici382 ici313 fis120 fis130
+  Period 7 - 17 credits: mat123 ili242 ici314 mat210 fis140
+  Period 8 - 17 credits: mat124 mat260 mat270 qui104 ici367
+  Period 9 - 17 credits: ili221 ici393 ili281 ile260 iln230
+  Period 10 - 16 credits: ili355 ili275 ici332 ili381 icn336
+  Period 11 - 18 credits: iwg101 ili151 iwm185 hxwxx2 iwn270 iwn261 iwi365
+
+
+Reporting top 5 solutions...
+
+Time elapsed: 113.619 seconds

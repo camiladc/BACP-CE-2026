@@ -1,8 +1,0 @@
-p=4
-
-courses = {
-inf256, icn270, inf285, inf293, inf5, inf322,
-inf343, inf301, inf295, inf266, inf6, inf302,
-inf303, inf311, inf312, inf360, inf7, inf304,
-inf313, inf314, inf228, inf309, inf310
-};

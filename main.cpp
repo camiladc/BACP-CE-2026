@@ -29,10 +29,14 @@ int main(int argc, char *argv[]){
     // inputs
     string base_path = argv[1];
 
-    //outputs
+    // Assign the seed
+    int seed = atoi(argv[2]);
+    randomize(seed);
+
+    //outputs for instance and seed
     string stem = fs::path(base_path).stem().string();
-    string f_convergence = format("convergence_results/convergence_{}.csv", stem); // convergence graph
-    string f_sol = format("solutions/solutions_{}.csv", stem); // formated solution as csv
+    string f_convergence = format("convergence_results/convergence_{}_{}.csv", stem, seed); // convergence graph
+    string f_sol = format("solutions/solutions_{}_{}.csv", stem, seed); // formated solution as csv
     
     // create output directories if they don't exist
     fs::create_directories("convergence_results");
@@ -61,10 +65,6 @@ int main(int argc, char *argv[]){
     
     conv << "# gen;best_fit\n";
     solution << "id_sol;period;courses;total_credits;period_fit;total_fit\n";
-
-    // Assign the seed
-    int seed = atoi(argv[2]);
-    randomize(seed);
     
     // Define the hyperparameters
     params.max_gen = atoi(argv[3]);

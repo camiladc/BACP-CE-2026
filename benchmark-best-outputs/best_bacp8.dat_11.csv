@@ -1,0 +1,22 @@
+Reading instance: benchmark-instances/bacp8.dat
+Base instance loaded: 46 courses, 38 prerequisites, 8 periods.
+Loading student specific case...
+
+Best solution found:
+Solution summary:
+  Feasible: yes
+  Fitness: 1.875
+  Periods: 8
+  Period 0 - 17 credits: iwn261 dew100 fis100 mat192 iei162 iwn270
+  Period 1 - 16 credits: dew101 fis101 hcw310 iwi131 iei271 hxwxx2 hfw120
+  Period 2 - 17 credits: iei261 dewxx0 hcw311 iei134 iei141 iei272 iei273
+  Period 3 - 17 credits: mat190 iei132 iei133 iei231 iei232
+  Period 4 - 17 credits: iei161 mat193 mat191 iei238 iei142
+  Period 5 - 17 credits: mat194 iwg101 iei233 iei241 iei219
+  Period 6 - 16 credits: mat195 fis102 iei248 iei274 hrw130
+  Period 7 - 16 credits: iei262 iei281 hxwxx1 iwn170 iwi365 iei218
+
+
+Reporting top 5 solutions...
+
+Time elapsed: 61.8034 seconds

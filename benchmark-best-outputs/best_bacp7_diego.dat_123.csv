@@ -1,0 +1,21 @@
+Reading instance: benchmark-instances/bacp7_diego.dat
+Base instance loaded: 35 courses, 17 prerequisites, 7 periods.
+Loading student specific case...
+
+Best solution found:
+Solution summary:
+  Feasible: yes
+  Fitness: 5.42857
+  Periods: 7
+  Period 0 - 27 credits: inf292 inf236 icn270 inf5 inf302 inf303
+  Period 1 - 25 credits: inf270 inf225 inf221 inf301 inf304
+  Period 2 - 27 credits: inf312 inf280 inf295 inf276 inf3 inf314
+  Period 3 - 25 credits: inf245 inf293 inf266 inf322 inf313
+  Period 4 - 25 credits: inf246 fis140 inf360 inf6 inf311
+  Period 5 - 26 credits: inf256 inf228 inf309 inf285 inf4 inf7
+  Period 6 - 25 credits: inf343 inf310
+
+
+Reporting top 5 solutions...
+
+Time elapsed: 29.4113 seconds

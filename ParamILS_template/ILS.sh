@@ -71,11 +71,17 @@ rm -rf ${screen}
 echo "./main ${dirInstances}/${instance} ${seed} ${params} > ${screen}"
 ./main ${dirInstances}/${instance} ${seed} ${params} > ${screen}
 
-#get quality from number of movements
-quality=`tail -4 ${screen} | awk -F';' 'NR==2 {print $6}'`
+# get quality from the Fitness value printed by the program
+quality=$(grep -E '^[[:space:]]*Fitness:' "${screen}" | tail -n 1 | awk '{print $NF}')
+
+if [ -z "${quality}" ]; then
+    echo "Could not find Fitness value in ${screen}" >&2
+    exit 1
+fi
 
 #buscar optimo en archivo
-exec<"optimos.txt"
+optimo=""
+found_optimo=0
 
 while read line
 do
@@ -84,9 +90,16 @@ do
     if [[ ${instance} == ${name} ]];
     then
         optimo=$2
+        found_optimo=1
         echo "nombre: ${name}, optimo: ${optimo} quality: ${quality}" 
+        break
     fi
-done
+done < "optimos.txt"
+
+if [ "${found_optimo}" -ne 1 ]; then
+    echo "Could not find optimum for instance ${instance} in optimos.txt" >&2
+    exit 1
+fi
 
 gap=$(awk "BEGIN {printf \"%.2f\",100.00*(${quality}-${optimo})/${optimo}}")
 # replace first blank only
