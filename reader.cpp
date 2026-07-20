@@ -5,6 +5,7 @@
 using namespace std;
 
 int num_periods = 0;
+int max_periods = 0;
 int min_load = 0;
 int max_load = 0;
 int min_courses = 0;
@@ -114,6 +115,11 @@ void readInstance(ifstream &base_file){
     if (!parseInt("p", num_periods, content_base)) {
         cerr << "Error: could not read number of periods (p)." << endl;
     }
+    // Read the maximum number of periods (p_max) for the curriculum, if cannot be read, it will be set to the same value as num_periods
+    if (!parseInt("p_max", max_periods, content_base)) {
+        max_periods = num_periods;
+        cerr << "Error: could not read maximum number of periods (p_max), using number of periods (p) instead." << endl;
+    }
     if (!parseInt("a", min_load, content_base)) {
         cerr << "Error: could not read minimum load (a)." << endl;
     }
@@ -201,7 +207,7 @@ void readInstance(ifstream &base_file){
         cerr << "Warning: credit list length (" << course_credits.size() << ") does not match course count (" << num_courses << ")." << endl;
     }
 
-    cout << "Base instance loaded: " << num_courses << " courses, " << prerequisites.size() << " prerequisites, " << num_periods << " periods." << endl;
+    cout << "Base instance loaded: " << num_courses << " courses, " << prerequisites.size() << " prerequisites, " << num_periods << " min periods, " << max_periods << " max periods." << endl;
     cout << "Loading student specific case...\n";
 }
 

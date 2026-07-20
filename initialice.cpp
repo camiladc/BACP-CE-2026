@@ -104,8 +104,8 @@ individual initialize_ind(){
         }
     }
 
-    // if period_multiplier is 1, ensure that the number of periods is at least num_periods and relocate the least amount of courses without prerequisites to the new empty periods
-    if (period_multiplier == 1 && static_cast<int>(new_ind.courses.size()) < num_periods) {
+    // if num peeriodo is equal to max_peeriod, ensure that the number of periods is at least num_periods and relocate the least amount of courses without prerequisites to the new empty periods
+    if ((num_periods == max_periods) && (static_cast<int>(new_ind.courses.size()) < num_periods)) {
         new_ind.courses.resize(num_periods);
         period_load.resize(num_periods, 0);
         period_count.resize(num_periods, 0);

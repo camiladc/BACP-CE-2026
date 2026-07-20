@@ -64,7 +64,6 @@ std::vector<int> getCourseParents(int id_course);
 void buildCoursePeriodRelationship(individual& ind, int id_course);
 void setCoursePeriodRelationship(individual& parent, individual& child, int id_course, std::vector<int>& courses_enrolled);
 
-int maxAllowedPeriods();
 int getCoursePeriod(const individual& ind, int course);
 int periodLoad(const individual& ind, int period, int skipCourse = -1);
 int periodCourseCount(const individual& ind, int period, int skipCourse = -1);
@@ -92,7 +91,7 @@ extern std::mt19937 rng;
 
 // Instance data
 extern int num_periods; //number of periods in the curriculum
-extern float period_multiplier; // for maximal period definition
+extern int max_periods; // for maximal period definition
 extern int min_load; // minimum academic load allowed per period
 extern int max_load; // maximum academic load allowed per period
 extern int min_courses; // minimum amount of courses allowed per period

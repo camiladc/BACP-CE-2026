@@ -34,7 +34,7 @@ static bool mutateBranchShift(individual& ind) {
         return false;
 
     if (newPeriod >= static_cast<int>(ind.courses.size())) {
-        if (static_cast<int>(ind.courses.size()) >= maxAllowedPeriods())
+        if (static_cast<int>(ind.courses.size()) >= max_periods)
             return false;
         ind.courses.resize(newPeriod + 1);
     }
@@ -50,7 +50,7 @@ static bool mutateBranchShift(individual& ind) {
 }
 
 static bool mutateInsertPeriod(individual& ind) {
-    if (static_cast<int>(ind.courses.size()) >= maxAllowedPeriods())
+    if (static_cast<int>(ind.courses.size()) >= max_periods)
         return false;
     if (ind.courses.empty())
         return false;

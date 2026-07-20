@@ -135,10 +135,6 @@ static bool isRemainingCourseId(int course) {
         != course_names.end();
 }
 
-int maxAllowedPeriods() {
-    return static_cast<int>(lround(num_periods * period_multiplier));
-}
-
 int getCoursePeriod(const individual& ind, int course) {
     for (int p = 0; p < static_cast<int>(ind.courses.size()); ++p) {
         if (find(ind.courses[p].begin(), ind.courses[p].end(), course) != ind.courses[p].end())
@@ -181,7 +177,7 @@ int earliestFeasiblePeriod(int course, const individual& ind) {
             continue;
         int prereqPeriod = getCoursePeriod(ind, prereq);
         if (prereqPeriod < 0)
-            return maxAllowedPeriods();
+            return max_periods; 
         earliest = max(earliest, prereqPeriod + 1);
     }
     return earliest;
@@ -211,10 +207,10 @@ bool canPlaceCourse(const individual& ind, int course, int period, int skipCours
 }
 
 bool validateIndividual(const individual& ind) {
-    if ((period_multiplier == 1) && (static_cast<int>(ind.courses.size()) < num_periods))
+    if ((num_periods == max_periods) && (static_cast<int>(ind.courses.size()) < num_periods))
         return false;
 
-    if (static_cast<int>(ind.courses.size()) > maxAllowedPeriods())
+    if (static_cast<int>(ind.courses.size()) > max_periods)
         return false;
 
     for (const auto& courseName : course_names) {

@@ -11,8 +11,6 @@ namespace fs = std::filesystem;
 
 // Hyperparams declaration
 hyperparams params;
-// period multiplier
-float period_multiplier = 1.5;
 
 // Random number generator declaration
 mt19937 rng;
@@ -20,8 +18,8 @@ mt19937 rng;
 int main(int argc, char *argv[]){
 
     if(argc < 10){
-        cout << "Usage:\n./main base_instance_path seed max_gen popsize period_multiplier cross_prob mut_prob mut_move_course_prob mut_branch_prob mut_insert_prob \n";
-        cout << "Example:\n./main benchmark-instances/bacp7_diego.dat 13 800 20 1 0.2 0.8 0.7 1 0.1 \n";
+        cout << "Usage:\n./main base_instance_path seed max_gen popsize cross_prob mut_prob mut_move_course_prob mut_branch_prob mut_insert_prob \n";
+        cout << "Example:\n./main benchmark-instances/bacp7_diego.dat 13 800 20 0.2 0.8 0.7 1 0.1 \n";
         exit(1);
     }
 
@@ -69,12 +67,11 @@ int main(int argc, char *argv[]){
     // Define the hyperparameters
     params.max_gen = atoi(argv[3]);
     params.popsize = atoi(argv[4]);
-    period_multiplier = stof(argv[5]);
-    params.cross_prob = stof(argv[6]);
-    params.mut_prob = stof(argv[7]);
-    params.mut_move_course_prob = stof(argv[8]);
-    params.mut_branch_prob = stof(argv[9]);
-    params.mut_insert_prob = stof(argv[10]);
+    params.cross_prob = stof(argv[5]);
+    params.mut_prob = stof(argv[6]);
+    params.mut_move_course_prob = stof(argv[7]);
+    params.mut_branch_prob = stof(argv[8]);
+    params.mut_insert_prob = stof(argv[9]);
     params.elite = 1;
 
     int top_sols_to_report = 5; //popsize; //<- to report all final solutions

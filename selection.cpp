@@ -35,7 +35,7 @@ void evaluatePop(vector<individual> &pop){
         for (int i = 0; i < total_periods; i++) {
             float diff = ind.total_credits_per_period[i] - MEAN_credits;
             ind.period_fitness[i] = diff * diff;
-            if (i >= maxAllowedPeriods())
+            if (i >= max_periods)
                 ind.period_fitness[i] += surplus;
         }
 
