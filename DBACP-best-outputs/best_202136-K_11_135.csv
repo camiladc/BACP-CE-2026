@@ -8,11 +8,11 @@ Solution summary:
   Fitness: 0.75
   Periods: 4
   Period 0 - 20 credits: inf360 inf306 inf314 inf308
-  Period 1 - 19 credits: inf7 inf228 inf309 inf305
-  Period 2 - 20 credits: inf295 inf307 inf312 inf313
-  Period 3 - 20 credits: inf310
+  Period 1 - 19 credits: inf228 inf309 inf7 inf295
+  Period 2 - 20 credits: inf310
+  Period 3 - 20 credits: inf307 inf312 inf313 inf305
 
 
-Reporting top 5 solutions...
+Reporting top 25 solutions...
 
-Time elapsed: 3.90147 seconds
+Time elapsed: 5.80852 seconds

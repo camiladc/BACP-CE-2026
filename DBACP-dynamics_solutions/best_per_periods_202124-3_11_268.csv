@@ -1,0 +1,16 @@
+total_periods;period;courses;total_credits;period_fit;total_fit
+5;1;inf360,inf308,inf293,inf314,fis140,;28;1;2
+5;2;inf309,inf307,inf312,inf343,inf285,inf305,inf5,;29;0;2
+5;3;icn270,inf7,inf228,inf6,inf306,inf311,;29;0;2
+5;4;inf310,inf295,inf313,;30;1;2
+6;1;inf7,inf360,inf6,inf307,inf285,icn270,;24;0.639999;6.8
+6;2;inf313,inf308,inf293,inf314,inf305,;25;3.24;6.8
+6;3;inf312,inf228,inf309,inf295,;22;1.44;6.8
+6;4;inf306,inf343,fis140,inf311,;23;0.0400003;6.8
+6;5;inf310,inf5,;22;1.44;6.8
+7;1;inf7,inf360,inf6,inf307,inf311,;19;0.111112;3.33333
+7;2;inf293,inf295,inf314,icn270,;20;0.444444;3.33333
+7;3;inf343,inf305,inf308,inf306,;20;0.444444;3.33333
+7;4;inf228,inf309,inf312,inf5,;19;0.111112;3.33333
+7;5;inf313,fis140,inf285,;18;1.77778;3.33333
+7;6;inf310,;20;0.444444;3.33333

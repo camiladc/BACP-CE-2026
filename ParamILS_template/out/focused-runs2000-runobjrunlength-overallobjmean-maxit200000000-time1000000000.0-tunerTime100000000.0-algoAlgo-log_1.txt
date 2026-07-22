@@ -1,0 +1,928 @@
+Call: /usr/bin/ruby ../scripts/param_ils_2_3_run.rb "-numRun" "1" "-approach" "focused" "-userunlog" "1" "-validN" "0" "-pruning" "0" "-maxEvals" "10000" "-scenariofile" "All.scn"
+
+
+seed: 2468
+algo: bash ILS.sh
+tunerTimeout (CPU time): 100000000.0
+maxWallTime: 8640000.0
+maxEvals: 10000
+run_obj: runlength
+overall_obj: mean
+instance_file: All.inst
+test_instance_file: All.inst
+N: 2000
+cutoff_time: 1000000000.0
+cutoff_length: 2147483647
+R: 10
+pertubation_strength_basic: 
+pertubation_strength_scaling: false
+p_restart: 0.01
+Run 2
+Level 
+========================================================
+Starting ILS for level 1, i.e. a limit of N=2000, and cutoff time=1000000000.0.
+Current CPU time = 0, this run goes until 100000000.0 
+========================================================
+New Incumbent: 0, 100000000 [0, 0]. With state cross_prob=0.3, max_gen=400, mut_branch_prob=0.1, mut_insert_prob=0.1, mut_move_course_prob=0.7, mut_prob=0.7, popsize=20
+ Same incumbent, new precision:
+New Incumbent: 0.1, 0.0 [1, 1000000000.0]. With state cross_prob=0.3, max_gen=400, mut_branch_prob=0.1, mut_insert_prob=0.1, mut_move_course_prob=0.7, mut_prob=0.7, popsize=20
+          -> Take improving step to random cross_prob=0.3 max_gen=600 mut_branch_prob=0.8 mut_insert_prob=0.7 mut_move_course_prob=0.5 mut_prob=0.9 popsize=10 (0.0 [based on 1 runs with cutoff 1000000000.0])
+
+        -> Worse random: cross_prob=0.5 max_gen=200 mut_branch_prob=0.3 mut_insert_prob=0.3 mut_move_course_prob=0.4 mut_prob=0.3 popsize=25 (213.0 [based on 1 runs with cutoff 1000000000.0])
+          -> Take improving step to random cross_prob=0.7 max_gen=600 mut_branch_prob=0.7 mut_insert_prob=0.5 mut_move_course_prob=0.5 mut_prob=0.9 popsize=15 (0.0 [based on 1 runs with cutoff 1000000000.0])
+
+        -> Worse random: cross_prob=0.7 max_gen=600 mut_branch_prob=0.6 mut_insert_prob=0.4 mut_move_course_prob=0.4 mut_prob=0.9 popsize=15 (106.0 [based on 1 runs with cutoff 1000000000.0])
+          -> Take improving step to random cross_prob=0.5 max_gen=300 mut_branch_prob=0.5 mut_insert_prob=0.3 mut_move_course_prob=0.2 mut_prob=0.8 popsize=30 (0.0 [based on 1 runs with cutoff 1000000000.0])
+
+        -> Worse random: cross_prob=0.7 max_gen=400 mut_branch_prob=0.3 mut_insert_prob=0.9 mut_move_course_prob=0.4 mut_prob=0.8 popsize=15 (106.0 [based on 1 runs with cutoff 1000000000.0])
+          -> Take improving step to random cross_prob=0.8 max_gen=200 mut_branch_prob=0.5 mut_insert_prob=0.3 mut_move_course_prob=0.6 mut_prob=0.5 popsize=20 (0.0 [based on 1 runs with cutoff 1000000000.0])
+
+        -> Worse random: cross_prob=0.1 max_gen=600 mut_branch_prob=0.2 mut_insert_prob=0.5 mut_move_course_prob=0.1 mut_prob=0.1 popsize=30 (106.0 [based on 1 runs with cutoff 1000000000.0])
+          -> Take improving step to random cross_prob=0.4 max_gen=600 mut_branch_prob=0.8 mut_insert_prob=0.9 mut_move_course_prob=0.2 mut_prob=0.4 popsize=20 (0.0 [based on 1 runs with cutoff 1000000000.0])
+
+          -> Take improving step to random cross_prob=0.3 max_gen=600 mut_branch_prob=0.2 mut_insert_prob=0.2 mut_move_course_prob=0.9 mut_prob=0.7 popsize=10 (0.0 [based on 1 runs with cutoff 1000000000.0])
+
+   BLS in iteration 1, start with cross_prob=0.3 max_gen=600 mut_branch_prob=0.2 mut_insert_prob=0.2 mut_move_course_prob=0.9 mut_prob=0.7 popsize=10 (0.0 [based on 1 runs with cutoff 1000000000.0])
+    Changing ["cross_prob: 0.3->0.4"], evaluating ...
+        -> worse: (106.0 [based on 1 runs with cutoff 1000000000.0])
+    Changing ["mut_prob: 0.7->0.2"], evaluating ...
+        -> worse: (426.0 [based on 1 runs with cutoff 1000000000.0])
+    Changing ["cross_prob: 0.3->0.2"], evaluating ...
+          -> Take improving step to neighbour cross_prob=0.2 max_gen=600 mut_branch_prob=0.2 mut_insert_prob=0.2 mut_move_course_prob=0.9 mut_prob=0.7 popsize=10 (0.0 [based on 1 runs with cutoff 1000000000.0]) with flip 1
+
+          
+============= Performing 3 bonus runs of state: cross_prob=0.2 max_gen=600 mut_branch_prob=0.2 mut_insert_prob=0.2 mut_move_course_prob=0.9 mut_prob=0.7 popsize=10 (0.0 [based on 1 runs with cutoff 1000000000.0]) ============ 
+
+State wants more detail (1+1) than incumbent (1), doing incumbent first:
+cross_prob=0.2 max_gen=600 mut_branch_prob=0.2 mut_insert_prob=0.2 mut_move_course_prob=0.9 mut_prob=0.7 popsize=10 (0.0 [based on 1 runs with cutoff 1000000000.0])
+cross_prob=0.3 max_gen=400 mut_branch_prob=0.1 mut_insert_prob=0.1 mut_move_course_prob=0.7 mut_prob=0.7 popsize=20 (0.0 [based on 1 runs with cutoff 1000000000.0])
+ Same incumbent, new precision:
+New Incumbent: 1.5000000000000002, -10.0 [2, 1000000000.0]. With state cross_prob=0.3, max_gen=400, mut_branch_prob=0.1, mut_insert_prob=0.1, mut_move_course_prob=0.7, mut_prob=0.7, popsize=20
+State wants more detail (2+1) than incumbent (2), doing incumbent first:
+cross_prob=0.2 max_gen=600 mut_branch_prob=0.2 mut_insert_prob=0.2 mut_move_course_prob=0.9 mut_prob=0.7 popsize=10 (-10.0 [based on 2 runs with cutoff 1000000000.0])
+cross_prob=0.3 max_gen=400 mut_branch_prob=0.1 mut_insert_prob=0.1 mut_move_course_prob=0.7 mut_prob=0.7 popsize=20 (-10.0 [based on 2 runs with cutoff 1000000000.0])
+ Same incumbent, new precision:
+New Incumbent: 1.7000000000000004, -6.666666666666667 [3, 1000000000.0]. With state cross_prob=0.3, max_gen=400, mut_branch_prob=0.1, mut_insert_prob=0.1, mut_move_course_prob=0.7, mut_prob=0.7, popsize=20
+State wants more detail (3+1) than incumbent (3), doing incumbent first:
+cross_prob=0.2 max_gen=600 mut_branch_prob=0.2 mut_insert_prob=0.2 mut_move_course_prob=0.9 mut_prob=0.7 popsize=10 (-6.666666666666667 [based on 3 runs with cutoff 1000000000.0])
+cross_prob=0.3 max_gen=400 mut_branch_prob=0.1 mut_insert_prob=0.1 mut_move_course_prob=0.7 mut_prob=0.7 popsize=20 (-6.666666666666667 [based on 3 runs with cutoff 1000000000.0])
+ Same incumbent, new precision:
+New Incumbent: 1.9000000000000006, 10.0 [4, 1000000000.0]. With state cross_prob=0.3, max_gen=400, mut_branch_prob=0.1, mut_insert_prob=0.1, mut_move_course_prob=0.7, mut_prob=0.7, popsize=20
+          -> After 3 bonus runs: cross_prob=0.2 max_gen=600 mut_branch_prob=0.2 mut_insert_prob=0.2 mut_move_course_prob=0.9 mut_prob=0.7 popsize=10 (40.0 [based on 4 runs with cutoff 1000000000.0])
+
+    Changing ["popsize: 10->25"], evaluating ...
+          -> Take improving step to neighbour cross_prob=0.2 max_gen=600 mut_branch_prob=0.2 mut_insert_prob=0.2 mut_move_course_prob=0.9 mut_prob=0.7 popsize=25 (10.0 [based on 4 runs with cutoff 1000000000.0]) with flip 2
+
+          
+============= Performing 1 bonus runs of state: cross_prob=0.2 max_gen=600 mut_branch_prob=0.2 mut_insert_prob=0.2 mut_move_course_prob=0.9 mut_prob=0.7 popsize=25 (10.0 [based on 4 runs with cutoff 1000000000.0]) ============ 
+
+State wants more detail (4+1) than incumbent (4), doing incumbent first:
+cross_prob=0.2 max_gen=600 mut_branch_prob=0.2 mut_insert_prob=0.2 mut_move_course_prob=0.9 mut_prob=0.7 popsize=25 (10.0 [based on 4 runs with cutoff 1000000000.0])
+cross_prob=0.3 max_gen=400 mut_branch_prob=0.1 mut_insert_prob=0.1 mut_move_course_prob=0.7 mut_prob=0.7 popsize=20 (10.0 [based on 4 runs with cutoff 1000000000.0])
+ Same incumbent, new precision:
+New Incumbent: 2.500000000000001, 74.6 [5, 1000000000.0]. With state cross_prob=0.3, max_gen=400, mut_branch_prob=0.1, mut_insert_prob=0.1, mut_move_course_prob=0.7, mut_prob=0.7, popsize=20
+New inc: 58.0
+New Incumbent: 2.600000000000001, 58.0 [5, 1000000000.0]. With state cross_prob=0.2, max_gen=600, mut_branch_prob=0.2, mut_insert_prob=0.2, mut_move_course_prob=0.9, mut_prob=0.7, popsize=25
+          -> After 1 bonus runs: cross_prob=0.2 max_gen=600 mut_branch_prob=0.2 mut_insert_prob=0.2 mut_move_course_prob=0.9 mut_prob=0.7 popsize=25 (58.0 [based on 5 runs with cutoff 1000000000.0])
+
+    Changing ["mut_branch_prob: 0.2->0.6"], evaluating ...
+          -> Take improving step to neighbour cross_prob=0.2 max_gen=600 mut_branch_prob=0.6 mut_insert_prob=0.2 mut_move_course_prob=0.9 mut_prob=0.7 popsize=25 (58.0 [based on 5 runs with cutoff 1000000000.0]) with flip 3
+
+          
+============= Performing 1 bonus runs of state: cross_prob=0.2 max_gen=600 mut_branch_prob=0.6 mut_insert_prob=0.2 mut_move_course_prob=0.9 mut_prob=0.7 popsize=25 (58.0 [based on 5 runs with cutoff 1000000000.0]) ============ 
+
+State wants more detail (5+1) than incumbent (5), doing incumbent first:
+cross_prob=0.2 max_gen=600 mut_branch_prob=0.6 mut_insert_prob=0.2 mut_move_course_prob=0.9 mut_prob=0.7 popsize=25 (58.0 [based on 5 runs with cutoff 1000000000.0])
+cross_prob=0.2 max_gen=600 mut_branch_prob=0.2 mut_insert_prob=0.2 mut_move_course_prob=0.9 mut_prob=0.7 popsize=25 (58.0 [based on 5 runs with cutoff 1000000000.0])
+ Same incumbent, new precision:
+New Incumbent: 3.2000000000000015, 45.0 [6, 1000000000.0]. With state cross_prob=0.2, max_gen=600, mut_branch_prob=0.2, mut_insert_prob=0.2, mut_move_course_prob=0.9, mut_prob=0.7, popsize=25
+          -> After 1 bonus runs: cross_prob=0.2 max_gen=600 mut_branch_prob=0.6 mut_insert_prob=0.2 mut_move_course_prob=0.9 mut_prob=0.7 popsize=25 (45.0 [based on 6 runs with cutoff 1000000000.0])
+
+    Changing ["mut_move_course_prob: 0.9->0.2"], evaluating ...
+New inc: 38.333333333333336
+New Incumbent: 3.900000000000002, 38.333333333333336 [6, 1000000000.0]. With state cross_prob=0.2, max_gen=600, mut_branch_prob=0.6, mut_insert_prob=0.2, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+          -> Take improving step to neighbour cross_prob=0.2 max_gen=600 mut_branch_prob=0.6 mut_insert_prob=0.2 mut_move_course_prob=0.2 mut_prob=0.7 popsize=25 (38.333333333333336 [based on 6 runs with cutoff 1000000000.0]) with flip 4
+
+          
+============= Performing 1 bonus runs of state: cross_prob=0.2 max_gen=600 mut_branch_prob=0.6 mut_insert_prob=0.2 mut_move_course_prob=0.2 mut_prob=0.7 popsize=25 (38.333333333333336 [based on 6 runs with cutoff 1000000000.0]) ============ 
+
+ Same incumbent, new precision:
+New Incumbent: 4.000000000000002, 264.7142857142857 [7, 1000000000.0]. With state cross_prob=0.2, max_gen=600, mut_branch_prob=0.6, mut_insert_prob=0.2, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+          -> After 1 bonus runs: cross_prob=0.2 max_gen=600 mut_branch_prob=0.6 mut_insert_prob=0.2 mut_move_course_prob=0.2 mut_prob=0.7 popsize=25 (264.7142857142857 [based on 7 runs with cutoff 1000000000.0])
+
+    Changing ["mut_branch_prob: 0.6->0.1"], evaluating ...
+        -> worse: (106.0 [based on 1 runs with cutoff 1000000000.0])
+    Changing ["mut_insert_prob: 0.2->0.1"], evaluating ...
+New inc: 1.1428571428571428
+New Incumbent: 4.799999999999999, 1.1428571428571428 [7, 1000000000.0]. With state cross_prob=0.2, max_gen=600, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+          -> Take improving step to neighbour cross_prob=0.2 max_gen=600 mut_branch_prob=0.6 mut_insert_prob=0.1 mut_move_course_prob=0.2 mut_prob=0.7 popsize=25 (1.1428571428571428 [based on 7 runs with cutoff 1000000000.0]) with flip 5
+
+          
+============= Performing 2 bonus runs of state: cross_prob=0.2 max_gen=600 mut_branch_prob=0.6 mut_insert_prob=0.1 mut_move_course_prob=0.2 mut_prob=0.7 popsize=25 (1.1428571428571428 [based on 7 runs with cutoff 1000000000.0]) ============ 
+
+ Same incumbent, new precision:
+New Incumbent: 4.899999999999999, 1.0 [8, 1000000000.0]. With state cross_prob=0.2, max_gen=600, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 4.999999999999998, 0.8888888888888888 [9, 1000000000.0]. With state cross_prob=0.2, max_gen=600, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+          -> After 2 bonus runs: cross_prob=0.2 max_gen=600 mut_branch_prob=0.6 mut_insert_prob=0.1 mut_move_course_prob=0.2 mut_prob=0.7 popsize=25 (0.8888888888888888 [based on 9 runs with cutoff 1000000000.0])
+
+    Changing ["mut_insert_prob: 0.1->0.3"], evaluating ...
+        -> worse: (0.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_insert_prob: 0.1->0.4"], evaluating ...
+        -> worse: (0.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["cross_prob: 0.2->0.3"], evaluating ...
+        -> worse: (40.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["popsize: 25->30"], evaluating ...
+        -> worse: (50.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["cross_prob: 0.2->0.6"], evaluating ...
+        -> worse: (0.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["max_gen: 600->500"], evaluating ...
+          -> Take improving step to neighbour cross_prob=0.2 max_gen=500 mut_branch_prob=0.6 mut_insert_prob=0.1 mut_move_course_prob=0.2 mut_prob=0.7 popsize=25 (0.8888888888888888 [based on 9 runs with cutoff 1000000000.0]) with flip 6
+
+          
+============= Performing 6 bonus runs of state: cross_prob=0.2 max_gen=500 mut_branch_prob=0.6 mut_insert_prob=0.1 mut_move_course_prob=0.2 mut_prob=0.7 popsize=25 (0.8888888888888888 [based on 9 runs with cutoff 1000000000.0]) ============ 
+
+State wants more detail (9+1) than incumbent (9), doing incumbent first:
+cross_prob=0.2 max_gen=500 mut_branch_prob=0.6 mut_insert_prob=0.1 mut_move_course_prob=0.2 mut_prob=0.7 popsize=25 (0.8888888888888888 [based on 9 runs with cutoff 1000000000.0])
+cross_prob=0.2 max_gen=600 mut_branch_prob=0.6 mut_insert_prob=0.1 mut_move_course_prob=0.2 mut_prob=0.7 popsize=25 (0.8888888888888888 [based on 9 runs with cutoff 1000000000.0])
+ Same incumbent, new precision:
+New Incumbent: 7.999999999999988, 25.8 [10, 1000000000.0]. With state cross_prob=0.2, max_gen=600, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+State wants more detail (10+1) than incumbent (10), doing incumbent first:
+cross_prob=0.2 max_gen=500 mut_branch_prob=0.6 mut_insert_prob=0.1 mut_move_course_prob=0.2 mut_prob=0.7 popsize=25 (25.8 [based on 10 runs with cutoff 1000000000.0])
+cross_prob=0.2 max_gen=600 mut_branch_prob=0.6 mut_insert_prob=0.1 mut_move_course_prob=0.2 mut_prob=0.7 popsize=25 (25.8 [based on 10 runs with cutoff 1000000000.0])
+ Same incumbent, new precision:
+New Incumbent: 8.199999999999987, 23.454545454545453 [11, 1000000000.0]. With state cross_prob=0.2, max_gen=600, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+State wants more detail (11+1) than incumbent (11), doing incumbent first:
+cross_prob=0.2 max_gen=500 mut_branch_prob=0.6 mut_insert_prob=0.1 mut_move_course_prob=0.2 mut_prob=0.7 popsize=25 (23.454545454545453 [based on 11 runs with cutoff 1000000000.0])
+cross_prob=0.2 max_gen=600 mut_branch_prob=0.6 mut_insert_prob=0.1 mut_move_course_prob=0.2 mut_prob=0.7 popsize=25 (23.454545454545453 [based on 11 runs with cutoff 1000000000.0])
+ Same incumbent, new precision:
+New Incumbent: 8.399999999999986, 16.583333333333332 [12, 1000000000.0]. With state cross_prob=0.2, max_gen=600, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+State wants more detail (12+1) than incumbent (12), doing incumbent first:
+cross_prob=0.2 max_gen=500 mut_branch_prob=0.6 mut_insert_prob=0.1 mut_move_course_prob=0.2 mut_prob=0.7 popsize=25 (16.583333333333332 [based on 12 runs with cutoff 1000000000.0])
+cross_prob=0.2 max_gen=600 mut_branch_prob=0.6 mut_insert_prob=0.1 mut_move_course_prob=0.2 mut_prob=0.7 popsize=25 (16.583333333333332 [based on 12 runs with cutoff 1000000000.0])
+ Same incumbent, new precision:
+New Incumbent: 8.599999999999985, 13.76923076923077 [13, 1000000000.0]. With state cross_prob=0.2, max_gen=600, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+State wants more detail (13+1) than incumbent (13), doing incumbent first:
+cross_prob=0.2 max_gen=500 mut_branch_prob=0.6 mut_insert_prob=0.1 mut_move_course_prob=0.2 mut_prob=0.7 popsize=25 (13.76923076923077 [based on 13 runs with cutoff 1000000000.0])
+cross_prob=0.2 max_gen=600 mut_branch_prob=0.6 mut_insert_prob=0.1 mut_move_course_prob=0.2 mut_prob=0.7 popsize=25 (13.76923076923077 [based on 13 runs with cutoff 1000000000.0])
+ Same incumbent, new precision:
+New Incumbent: 8.799999999999985, 36.57142857142857 [14, 1000000000.0]. With state cross_prob=0.2, max_gen=600, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+State wants more detail (14+1) than incumbent (14), doing incumbent first:
+cross_prob=0.2 max_gen=500 mut_branch_prob=0.6 mut_insert_prob=0.1 mut_move_course_prob=0.2 mut_prob=0.7 popsize=25 (36.57142857142857 [based on 14 runs with cutoff 1000000000.0])
+cross_prob=0.2 max_gen=600 mut_branch_prob=0.6 mut_insert_prob=0.1 mut_move_course_prob=0.2 mut_prob=0.7 popsize=25 (36.57142857142857 [based on 14 runs with cutoff 1000000000.0])
+ Same incumbent, new precision:
+New Incumbent: 8.999999999999984, 34.13333333333333 [15, 1000000000.0]. With state cross_prob=0.2, max_gen=600, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+          -> After 6 bonus runs: cross_prob=0.2 max_gen=500 mut_branch_prob=0.6 mut_insert_prob=0.1 mut_move_course_prob=0.2 mut_prob=0.7 popsize=25 (34.13333333333333 [based on 15 runs with cutoff 1000000000.0])
+
+    Changing ["mut_insert_prob: 0.1->0.4"], evaluating ...
+        -> worse: (0.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_prob: 0.7->0.5"], evaluating ...
+        -> worse: (0.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_branch_prob: 0.6->0.2"], evaluating ...
+        -> worse: (106.0 [based on 1 runs with cutoff 1000000000.0])
+    Changing ["mut_insert_prob: 0.1->0.7"], evaluating ...
+101/10000, 10.09999999999998/100000000.0
+        -> worse: (0.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_prob: 0.7->0.9"], evaluating ...
+        -> worse: (10.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["max_gen: 500->400"], evaluating ...
+        -> worse: (134.2 [based on 5 runs with cutoff 1000000000.0])
+    Changing ["mut_move_course_prob: 0.2->0.8"], evaluating ...
+        -> worse: (70.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_insert_prob: 0.1->0.5"], evaluating ...
+        -> worse: (0.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["cross_prob: 0.2->0.4"], evaluating ...
+        -> worse: (106.0 [based on 1 runs with cutoff 1000000000.0])
+    Changing ["cross_prob: 0.2->0.9"], evaluating ...
+        -> worse: (430.75 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_prob: 0.7->0.2"], evaluating ...
+        -> worse: (40.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_prob: 0.7->0.1"], evaluating ...
+        -> worse: (106.0 [based on 1 runs with cutoff 1000000000.0])
+    Changing ["mut_move_course_prob: 0.2->0.3"], evaluating ...
+        -> worse: (0.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["cross_prob: 0.2->0.6"], evaluating ...
+        -> worse: (0.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_branch_prob: 0.6->0.4"], evaluating ...
+        -> worse: (0.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["popsize: 25->20"], evaluating ...
+        -> worse: (70.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["cross_prob: 0.2->0.5"], evaluating ...
+        -> worse: (10.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["popsize: 25->30"], evaluating ...
+        -> worse: (50.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["cross_prob: 0.2->0.1"], evaluating ...
+        -> worse: (40.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_move_course_prob: 0.2->0.9"], evaluating ...
+        -> worse: (10.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_move_course_prob: 0.2->0.5"], evaluating ...
+        -> worse: (10.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_branch_prob: 0.6->0.3"], evaluating ...
+        -> worse: (10.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_insert_prob: 0.1->0.8"], evaluating ...
+        -> worse: (0.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["cross_prob: 0.2->0.7"], evaluating ...
+        -> worse: (1202.25 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_branch_prob: 0.6->0.5"], evaluating ...
+        -> worse: (10.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_branch_prob: 0.6->0.8"], evaluating ...
+        -> worse: (0.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["max_gen: 500->300"], evaluating ...
+        -> worse: (-9.75 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_move_course_prob: 0.2->0.1"], evaluating ...
+        -> worse: (10.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["cross_prob: 0.2->0.8"], evaluating ...
+        -> worse: (213.0 [based on 1 runs with cutoff 1000000000.0])
+    Changing ["mut_move_course_prob: 0.2->0.7"], evaluating ...
+        -> worse: (40.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_prob: 0.7->0.8"], evaluating ...
+201/10000, 20.100000000000016/100000000.0
+        -> worse: (10.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["max_gen: 500->200"], evaluating ...
+        -> worse: (20.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_insert_prob: 0.1->0.3"], evaluating ...
+        -> worse: (0.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_insert_prob: 0.1->0.9"], evaluating ...
+        -> worse: (0.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_move_course_prob: 0.2->0.4"], evaluating ...
+        -> worse: (0.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_insert_prob: 0.1->0.2"], evaluating ...
+        -> worse: (0.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_move_course_prob: 0.2->0.6"], evaluating ...
+        -> worse: (40.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_prob: 0.7->0.6"], evaluating ...
+        -> worse: (40.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_insert_prob: 0.1->0.6"], evaluating ...
+        -> worse: (0.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_branch_prob: 0.6->0.9"], evaluating ...
+        -> worse: (0.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_prob: 0.7->0.4"], evaluating ...
+        -> worse: (10.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_prob: 0.7->0.3"], evaluating ...
+        -> worse: (30.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["cross_prob: 0.2->0.3"], evaluating ...
+        -> worse: (40.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["popsize: 25->10"], evaluating ...
+        -> worse: (0.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_branch_prob: 0.6->0.7"], evaluating ...
+        -> worse: (10.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["popsize: 25->15"], evaluating ...
+        -> worse: (50.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["max_gen: 500->800"], evaluating ...
+New inc: 17.466666666666665
+New Incumbent: 27.900000000000126, 17.466666666666665 [15, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+          -> Take improving step to neighbour cross_prob=0.2 max_gen=800 mut_branch_prob=0.6 mut_insert_prob=0.1 mut_move_course_prob=0.2 mut_prob=0.7 popsize=25 (17.466666666666665 [based on 15 runs with cutoff 1000000000.0]) with flip 7
+
+          
+============= Performing 47 bonus runs of state: cross_prob=0.2 max_gen=800 mut_branch_prob=0.6 mut_insert_prob=0.1 mut_move_course_prob=0.2 mut_prob=0.7 popsize=25 (17.466666666666665 [based on 15 runs with cutoff 1000000000.0]) ============ 
+
+ Same incumbent, new precision:
+New Incumbent: 28.000000000000128, 16.375 [16, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 28.10000000000013, 9.529411764705882 [17, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 28.20000000000013, 18.22222222222222 [18, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 28.300000000000132, 17.263157894736842 [19, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 28.400000000000134, 15.4 [20, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 28.500000000000135, 26.571428571428573 [21, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 28.600000000000136, 40.81818181818182 [22, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 28.700000000000138, 39.04347826086956 [23, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 28.80000000000014, 36.583333333333336 [24, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 28.90000000000014, 35.12 [25, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 29.000000000000142, 33.76923076923077 [26, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 29.100000000000144, 32.51851851851852 [27, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 29.200000000000145, 34.32142857142857 [28, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 29.300000000000146, 32.44827586206897 [29, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 29.400000000000148, 32.03333333333333 [30, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 29.50000000000015, 54.903225806451616 [31, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 29.60000000000015, 53.1875 [32, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 29.700000000000152, 50.96969696969697 [33, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 29.800000000000153, 49.470588235294116 [34, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 29.900000000000155, 48.05714285714286 [35, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 30.000000000000156, 46.72222222222222 [36, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+301/10000, 30.100000000000158/100000000.0
+ Same incumbent, new precision:
+New Incumbent: 30.100000000000158, 44.91891891891892 [37, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 30.20000000000016, 43.73684210526316 [38, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 30.30000000000016, 42.12820512820513 [39, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 30.400000000000162, 45.225 [40, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 30.500000000000163, 50.46341463414634 [41, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 30.600000000000165, 49.26190476190476 [42, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 30.700000000000166, 47.651162790697676 [43, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 30.800000000000168, 46.56818181818182 [44, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 30.90000000000017, 45.53333333333333 [45, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 31.00000000000017, 44.54347826086956 [46, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 31.100000000000172, 48.276595744680854 [47, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 31.200000000000173, 46.854166666666664 [48, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 31.300000000000175, 45.89795918367347 [49, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 31.400000000000176, 44.98 [50, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 31.500000000000178, 44.09803921568628 [51, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 31.60000000000018, 43.25 [52, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 31.70000000000018, 42.43396226415094 [53, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 31.800000000000182, 41.27777777777778 [54, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 31.900000000000183, 40.18181818181818 [55, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 32.000000000000185, 47.69642857142857 [56, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 32.100000000000186, 60.01754385964912 [57, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 32.20000000000019, 58.63793103448276 [58, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 32.30000000000019, 57.644067796610166 [59, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 32.40000000000019, 56.68333333333333 [60, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 32.50000000000019, 58.704918032786885 [61, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 32.60000000000019, 57.75806451612903 [62, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+          -> After 47 bonus runs: cross_prob=0.2 max_gen=800 mut_branch_prob=0.6 mut_insert_prob=0.1 mut_move_course_prob=0.2 mut_prob=0.7 popsize=25 (57.75806451612903 [based on 62 runs with cutoff 1000000000.0])
+
+    Changing ["cross_prob: 0.2->0.8"], evaluating ...
+        -> worse: (1563.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_insert_prob: 0.1->0.2"], evaluating ...
+        -> worse: (0.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_prob: 0.7->0.8"], evaluating ...
+        -> worse: (10.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_branch_prob: 0.6->0.4"], evaluating ...
+        -> worse: (-9.75 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_move_course_prob: 0.2->0.6"], evaluating ...
+        -> worse: (40.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["cross_prob: 0.2->0.6"], evaluating ...
+        -> worse: (0.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_branch_prob: 0.6->0.3"], evaluating ...
+        -> worse: (0.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["cross_prob: 0.2->0.7"], evaluating ...
+        -> worse: (1202.25 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["cross_prob: 0.2->0.5"], evaluating ...
+        -> worse: (10.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_prob: 0.7->0.2"], evaluating ...
+        -> worse: (40.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["cross_prob: 0.2->0.4"], evaluating ...
+        -> worse: (106.0 [based on 1 runs with cutoff 1000000000.0])
+    Changing ["mut_insert_prob: 0.1->0.9"], evaluating ...
+        -> worse: (0.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_branch_prob: 0.6->0.2"], evaluating ...
+        -> worse: (106.0 [based on 1 runs with cutoff 1000000000.0])
+    Changing ["popsize: 25->30"], evaluating ...
+        -> worse: (30.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_insert_prob: 0.1->0.4"], evaluating ...
+        -> worse: (0.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["popsize: 25->15"], evaluating ...
+        -> worse: (40.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_move_course_prob: 0.2->0.7"], evaluating ...
+        -> worse: (0.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_prob: 0.7->0.4"], evaluating ...
+        -> worse: (10.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_branch_prob: 0.6->0.5"], evaluating ...
+        -> worse: (0.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_prob: 0.7->0.5"], evaluating ...
+        -> worse: (0.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_insert_prob: 0.1->0.6"], evaluating ...
+401/10000, 40.1000000000003/100000000.0
+        -> worse: (0.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_move_course_prob: 0.2->0.9"], evaluating ...
+        -> worse: (10.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_prob: 0.7->0.3"], evaluating ...
+        -> worse: (30.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_move_course_prob: 0.2->0.8"], evaluating ...
+        -> worse: (70.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_branch_prob: 0.6->0.7"], evaluating ...
+        -> worse: (10.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_insert_prob: 0.1->0.5"], evaluating ...
+        -> worse: (0.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_insert_prob: 0.1->0.3"], evaluating ...
+        -> worse: (0.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_move_course_prob: 0.2->0.5"], evaluating ...
+        -> worse: (10.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["cross_prob: 0.2->0.3"], evaluating ...
+        -> worse: (10.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_insert_prob: 0.1->0.7"], evaluating ...
+        -> worse: (0.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_insert_prob: 0.1->0.8"], evaluating ...
+        -> worse: (0.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_prob: 0.7->0.9"], evaluating ...
+        -> worse: (10.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_move_course_prob: 0.2->0.1"], evaluating ...
+        -> worse: (10.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["popsize: 25->20"], evaluating ...
+        -> worse: (0.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["cross_prob: 0.2->0.1"], evaluating ...
+        -> worse: (40.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_branch_prob: 0.6->0.1"], evaluating ...
+        -> worse: (4.0 [based on 2 runs with cutoff 1000000000.0])
+    Changing ["cross_prob: 0.2->0.9"], evaluating ...
+        -> worse: (430.75 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_branch_prob: 0.6->0.8"], evaluating ...
+        -> worse: (0.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_branch_prob: 0.6->0.9"], evaluating ...
+        -> worse: (0.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_prob: 0.7->0.1"], evaluating ...
+        -> worse: (106.0 [based on 1 runs with cutoff 1000000000.0])
+    Changing ["popsize: 25->10"], evaluating ...
+        -> worse: (0.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_move_course_prob: 0.2->0.4"], evaluating ...
+        -> worse: (0.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_prob: 0.7->0.6"], evaluating ...
+        -> worse: (40.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_move_course_prob: 0.2->0.3"], evaluating ...
+        -> worse: (0.0 [based on 4 runs with cutoff 1000000000.0])
+          
+============= Performing 44 bonus runs of state: cross_prob=0.2 max_gen=800 mut_branch_prob=0.6 mut_insert_prob=0.1 mut_move_course_prob=0.2 mut_prob=0.7 popsize=25 (57.75806451612903 [based on 62 runs with cutoff 1000000000.0]) ============ 
+
+ Same incumbent, new precision:
+New Incumbent: 49.20000000000043, 56.84126984126984 [63, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 49.30000000000043, 55.640625 [64, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 49.40000000000043, 56.06153846153846 [65, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 49.50000000000043, 55.21212121212121 [66, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 49.600000000000435, 54.38805970149254 [67, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 49.700000000000436, 53.294117647058826 [68, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 49.80000000000044, 52.52173913043478 [69, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 49.90000000000044, 51.5 [70, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 50.00000000000044, 55.0 [71, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+501/10000, 50.10000000000044/100000000.0
+ Same incumbent, new precision:
+New Incumbent: 50.10000000000044, 53.958333333333336 [72, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 50.20000000000044, 53.21917808219178 [73, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 50.300000000000445, 52.5 [74, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 50.400000000000446, 51.8 [75, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 50.50000000000045, 51.11842105263158 [76, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 50.60000000000045, 50.714285714285715 [77, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 50.70000000000045, 50.06410256410256 [78, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 50.80000000000045, 49.177215189873415 [79, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 50.90000000000045, 48.5625 [80, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 51.000000000000455, 47.96296296296296 [81, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 51.100000000000456, 47.3780487804878 [82, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 51.20000000000046, 46.80722891566265 [83, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 51.30000000000046, 45.54761904761905 [84, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 51.40000000000046, 44.77647058823529 [85, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 51.50000000000046, 45.41860465116279 [86, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 51.60000000000046, 44.89655172413793 [87, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 51.700000000000465, 44.15909090909091 [88, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 51.800000000000466, 43.662921348314605 [89, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 51.90000000000047, 43.17777777777778 [90, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 52.00000000000047, 42.7032967032967 [91, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 52.10000000000047, 44.19565217391305 [92, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 52.20000000000047, 43.72043010752688 [93, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 52.30000000000047, 43.255319148936174 [94, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 52.400000000000475, 42.589473684210525 [95, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 52.500000000000476, 41.9375 [96, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 52.60000000000048, 41.50515463917526 [97, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 52.70000000000048, 40.88775510204081 [98, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 52.80000000000048, 40.474747474747474 [99, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 52.90000000000048, 40.07 [100, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 53.00000000000048, 39.67326732673267 [101, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 53.100000000000485, 39.28431372549019 [102, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 53.200000000000486, 38.71844660194175 [103, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 53.30000000000049, 38.34615384615385 [104, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 53.40000000000049, 37.79047619047619 [105, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+ Same incumbent, new precision:
+New Incumbent: 53.50000000000049, 37.24528301886792 [106, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+          -> After 44 bonus runs for LM: cross_prob=0.2 max_gen=800 mut_branch_prob=0.6 mut_insert_prob=0.1 mut_move_course_prob=0.2 mut_prob=0.7 popsize=25 (37.24528301886792 [based on 106 runs with cutoff 1000000000.0])
+
+   LM for iteration 1: cross_prob=0.2 max_gen=800 mut_branch_prob=0.6 mut_insert_prob=0.1 mut_move_course_prob=0.2 mut_prob=0.7 popsize=25 (37.24528301886792 [based on 106 runs with cutoff 1000000000.0])
+
+========== DETAILED RESULTS (iteration 1): ==========
+================================================
+
+==================================================================
+Best parameter configuration found so far (end of iteration 1): cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+==================================================================
+Training quality of this incumbent parameter configuration: 37.24528301886792, based on 106 runs with cutoff 1000000000.0
+==================================================================
+
+Comparing LM against incumbent:
+cross_prob=0.2 max_gen=800 mut_branch_prob=0.6 mut_insert_prob=0.1 mut_move_course_prob=0.2 mut_prob=0.7 popsize=25 (37.24528301886792 [based on 106 runs with cutoff 1000000000.0])
+cross_prob=0.2 max_gen=800 mut_branch_prob=0.6 mut_insert_prob=0.1 mut_move_course_prob=0.2 mut_prob=0.7 popsize=25 (37.24528301886792 [based on 106 runs with cutoff 1000000000.0])
+LM better, change incumbent
+New Incumbent: 53.50000000000049, 37.24528301886792 [106, 1000000000.0]. With state cross_prob=0.2, max_gen=800, mut_branch_prob=0.6, mut_insert_prob=0.1, mut_move_course_prob=0.2, mut_prob=0.7, popsize=25
+535/10000, 53.50000000000049/100000000.0
+iteration 2, flip 9, evaluation count 535
+    perturb to ---> cross_prob=0.3 max_gen=800 mut_branch_prob=0.6 mut_insert_prob=0.1 mut_move_course_prob=0.2 mut_prob=0.7 popsize=25 (10.0 [based on 4 runs with cutoff 1000000000.0])
+    perturb to ---> cross_prob=0.3 max_gen=800 mut_branch_prob=0.5 mut_insert_prob=0.1 mut_move_course_prob=0.2 mut_prob=0.7 popsize=25 (100000000 [based on 0 runs with cutoff 0])
+    perturb to ---> cross_prob=0.3 max_gen=800 mut_branch_prob=0.5 mut_insert_prob=0.9 mut_move_course_prob=0.2 mut_prob=0.7 popsize=25 (100000000 [based on 0 runs with cutoff 0])
+   BLS in iteration 2, start with cross_prob=0.3 max_gen=800 mut_branch_prob=0.5 mut_insert_prob=0.9 mut_move_course_prob=0.2 mut_prob=0.7 popsize=25 (0.0 [based on 1 runs with cutoff 1000000000.0])
+    Changing ["popsize: 25->30"], evaluating ...
+          -> Take improving step to neighbour cross_prob=0.3 max_gen=800 mut_branch_prob=0.5 mut_insert_prob=0.9 mut_move_course_prob=0.2 mut_prob=0.7 popsize=30 (0.0 [based on 1 runs with cutoff 1000000000.0]) with flip 9
+
+          
+============= Performing 1 bonus runs of state: cross_prob=0.3 max_gen=800 mut_branch_prob=0.5 mut_insert_prob=0.9 mut_move_course_prob=0.2 mut_prob=0.7 popsize=30 (0.0 [based on 1 runs with cutoff 1000000000.0]) ============ 
+
+          -> After 1 bonus runs: cross_prob=0.3 max_gen=800 mut_branch_prob=0.5 mut_insert_prob=0.9 mut_move_course_prob=0.2 mut_prob=0.7 popsize=30 (-10.0 [based on 2 runs with cutoff 1000000000.0])
+
+    Changing ["mut_prob: 0.7->0.4"], evaluating ...
+          -> Take improving step to neighbour cross_prob=0.3 max_gen=800 mut_branch_prob=0.5 mut_insert_prob=0.9 mut_move_course_prob=0.2 mut_prob=0.4 popsize=30 (-10.0 [based on 2 runs with cutoff 1000000000.0]) with flip 10
+
+          
+============= Performing 1 bonus runs of state: cross_prob=0.3 max_gen=800 mut_branch_prob=0.5 mut_insert_prob=0.9 mut_move_course_prob=0.2 mut_prob=0.4 popsize=30 (-10.0 [based on 2 runs with cutoff 1000000000.0]) ============ 
+
+          -> After 1 bonus runs: cross_prob=0.3 max_gen=800 mut_branch_prob=0.5 mut_insert_prob=0.9 mut_move_course_prob=0.2 mut_prob=0.4 popsize=30 (-6.666666666666667 [based on 3 runs with cutoff 1000000000.0])
+
+    Changing ["mut_prob: 0.4->0.6"], evaluating ...
+          -> Take improving step to neighbour cross_prob=0.3 max_gen=800 mut_branch_prob=0.5 mut_insert_prob=0.9 mut_move_course_prob=0.2 mut_prob=0.6 popsize=30 (-6.666666666666667 [based on 3 runs with cutoff 1000000000.0]) with flip 11
+
+          
+============= Performing 1 bonus runs of state: cross_prob=0.3 max_gen=800 mut_branch_prob=0.5 mut_insert_prob=0.9 mut_move_course_prob=0.2 mut_prob=0.6 popsize=30 (-6.666666666666667 [based on 3 runs with cutoff 1000000000.0]) ============ 
+
+          -> After 1 bonus runs: cross_prob=0.3 max_gen=800 mut_branch_prob=0.5 mut_insert_prob=0.9 mut_move_course_prob=0.2 mut_prob=0.6 popsize=30 (20.0 [based on 4 runs with cutoff 1000000000.0])
+
+    Changing ["mut_move_course_prob: 0.2->0.7"], evaluating ...
+          -> Take improving step to neighbour cross_prob=0.3 max_gen=800 mut_branch_prob=0.5 mut_insert_prob=0.9 mut_move_course_prob=0.7 mut_prob=0.6 popsize=30 (20.0 [based on 4 runs with cutoff 1000000000.0]) with flip 12
+
+          
+============= Performing 1 bonus runs of state: cross_prob=0.3 max_gen=800 mut_branch_prob=0.5 mut_insert_prob=0.9 mut_move_course_prob=0.7 mut_prob=0.6 popsize=30 (20.0 [based on 4 runs with cutoff 1000000000.0]) ============ 
+
+          -> After 1 bonus runs: cross_prob=0.3 max_gen=800 mut_branch_prob=0.5 mut_insert_prob=0.9 mut_move_course_prob=0.7 mut_prob=0.6 popsize=30 (16.0 [based on 5 runs with cutoff 1000000000.0])
+
+    Changing ["mut_prob: 0.6->0.1"], evaluating ...
+        -> worse: (240.5 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["max_gen: 800->600"], evaluating ...
+          -> Take improving step to neighbour cross_prob=0.3 max_gen=600 mut_branch_prob=0.5 mut_insert_prob=0.9 mut_move_course_prob=0.7 mut_prob=0.6 popsize=30 (16.0 [based on 5 runs with cutoff 1000000000.0]) with flip 13
+
+          
+============= Performing 2 bonus runs of state: cross_prob=0.3 max_gen=600 mut_branch_prob=0.5 mut_insert_prob=0.9 mut_move_course_prob=0.7 mut_prob=0.6 popsize=30 (16.0 [based on 5 runs with cutoff 1000000000.0]) ============ 
+
+          -> After 2 bonus runs: cross_prob=0.3 max_gen=600 mut_branch_prob=0.5 mut_insert_prob=0.9 mut_move_course_prob=0.7 mut_prob=0.6 popsize=30 (85.85714285714286 [based on 7 runs with cutoff 1000000000.0])
+
+    Changing ["mut_branch_prob: 0.5->0.1"], evaluating ...
+        -> worse: (140.25 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_branch_prob: 0.5->0.4"], evaluating ...
+          -> Take improving step to neighbour cross_prob=0.3 max_gen=600 mut_branch_prob=0.4 mut_insert_prob=0.9 mut_move_course_prob=0.7 mut_prob=0.6 popsize=30 (85.85714285714286 [based on 7 runs with cutoff 1000000000.0]) with flip 14
+
+          
+============= Performing 2 bonus runs of state: cross_prob=0.3 max_gen=600 mut_branch_prob=0.4 mut_insert_prob=0.9 mut_move_course_prob=0.7 mut_prob=0.6 popsize=30 (85.85714285714286 [based on 7 runs with cutoff 1000000000.0]) ============ 
+
+          -> After 2 bonus runs: cross_prob=0.3 max_gen=600 mut_branch_prob=0.4 mut_insert_prob=0.9 mut_move_course_prob=0.7 mut_prob=0.6 popsize=30 (66.77777777777777 [based on 9 runs with cutoff 1000000000.0])
+
+    Changing ["mut_insert_prob: 0.9->0.1"], evaluating ...
+          -> Take improving step to neighbour cross_prob=0.3 max_gen=600 mut_branch_prob=0.4 mut_insert_prob=0.1 mut_move_course_prob=0.7 mut_prob=0.6 popsize=30 (66.77777777777777 [based on 9 runs with cutoff 1000000000.0]) with flip 15
+
+          
+============= Performing 1 bonus runs of state: cross_prob=0.3 max_gen=600 mut_branch_prob=0.4 mut_insert_prob=0.1 mut_move_course_prob=0.7 mut_prob=0.6 popsize=30 (66.77777777777777 [based on 9 runs with cutoff 1000000000.0]) ============ 
+
+          -> After 1 bonus runs: cross_prob=0.3 max_gen=600 mut_branch_prob=0.4 mut_insert_prob=0.1 mut_move_course_prob=0.7 mut_prob=0.6 popsize=30 (60.1 [based on 10 runs with cutoff 1000000000.0])
+
+    Changing ["max_gen: 600->800"], evaluating ...
+          -> Take improving step to neighbour cross_prob=0.3 max_gen=800 mut_branch_prob=0.4 mut_insert_prob=0.1 mut_move_course_prob=0.7 mut_prob=0.6 popsize=30 (60.1 [based on 10 runs with cutoff 1000000000.0]) with flip 16
+
+          
+============= Performing 1 bonus runs of state: cross_prob=0.3 max_gen=800 mut_branch_prob=0.4 mut_insert_prob=0.1 mut_move_course_prob=0.7 mut_prob=0.6 popsize=30 (60.1 [based on 10 runs with cutoff 1000000000.0]) ============ 
+
+          -> After 1 bonus runs: cross_prob=0.3 max_gen=800 mut_branch_prob=0.4 mut_insert_prob=0.1 mut_move_course_prob=0.7 mut_prob=0.6 popsize=30 (54.63636363636363 [based on 11 runs with cutoff 1000000000.0])
+
+    Changing ["mut_insert_prob: 0.1->0.2"], evaluating ...
+601/10000, 60.100000000000584/100000000.0
+          -> Take improving step to neighbour cross_prob=0.3 max_gen=800 mut_branch_prob=0.4 mut_insert_prob=0.2 mut_move_course_prob=0.7 mut_prob=0.6 popsize=30 (54.63636363636363 [based on 11 runs with cutoff 1000000000.0]) with flip 17
+
+          
+============= Performing 1 bonus runs of state: cross_prob=0.3 max_gen=800 mut_branch_prob=0.4 mut_insert_prob=0.2 mut_move_course_prob=0.7 mut_prob=0.6 popsize=30 (54.63636363636363 [based on 11 runs with cutoff 1000000000.0]) ============ 
+
+          -> After 1 bonus runs: cross_prob=0.3 max_gen=800 mut_branch_prob=0.4 mut_insert_prob=0.2 mut_move_course_prob=0.7 mut_prob=0.6 popsize=30 (78.41666666666667 [based on 12 runs with cutoff 1000000000.0])
+
+    Changing ["mut_prob: 0.6->0.7"], evaluating ...
+          -> Take improving step to neighbour cross_prob=0.3 max_gen=800 mut_branch_prob=0.4 mut_insert_prob=0.2 mut_move_course_prob=0.7 mut_prob=0.7 popsize=30 (15.666666666666666 [based on 12 runs with cutoff 1000000000.0]) with flip 18
+
+          
+============= Performing 1 bonus runs of state: cross_prob=0.3 max_gen=800 mut_branch_prob=0.4 mut_insert_prob=0.2 mut_move_course_prob=0.7 mut_prob=0.7 popsize=30 (15.666666666666666 [based on 12 runs with cutoff 1000000000.0]) ============ 
+
+          -> After 1 bonus runs: cross_prob=0.3 max_gen=800 mut_branch_prob=0.4 mut_insert_prob=0.2 mut_move_course_prob=0.7 mut_prob=0.7 popsize=30 (12.923076923076923 [based on 13 runs with cutoff 1000000000.0])
+
+    Changing ["mut_move_course_prob: 0.7->0.6"], evaluating ...
+          -> Take improving step to neighbour cross_prob=0.3 max_gen=800 mut_branch_prob=0.4 mut_insert_prob=0.2 mut_move_course_prob=0.6 mut_prob=0.7 popsize=30 (-9.153846153846153 [based on 13 runs with cutoff 1000000000.0]) with flip 19
+
+          
+============= Performing 1 bonus runs of state: cross_prob=0.3 max_gen=800 mut_branch_prob=0.4 mut_insert_prob=0.2 mut_move_course_prob=0.6 mut_prob=0.7 popsize=30 (-9.153846153846153 [based on 13 runs with cutoff 1000000000.0]) ============ 
+
+          -> After 1 bonus runs: cross_prob=0.3 max_gen=800 mut_branch_prob=0.4 mut_insert_prob=0.2 mut_move_course_prob=0.6 mut_prob=0.7 popsize=30 (-2.5714285714285716 [based on 14 runs with cutoff 1000000000.0])
+
+    Changing ["mut_move_course_prob: 0.6->0.5"], evaluating ...
+        -> worse: (70.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_move_course_prob: 0.6->0.2"], evaluating ...
+        -> worse: (49.2 [based on 5 runs with cutoff 1000000000.0])
+    Changing ["cross_prob: 0.3->0.2"], evaluating ...
+        -> worse: (90.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_branch_prob: 0.4->0.9"], evaluating ...
+          -> Take improving step to neighbour cross_prob=0.3 max_gen=800 mut_branch_prob=0.9 mut_insert_prob=0.2 mut_move_course_prob=0.6 mut_prob=0.7 popsize=30 (-2.5714285714285716 [based on 14 runs with cutoff 1000000000.0]) with flip 20
+
+          
+============= Performing 4 bonus runs of state: cross_prob=0.3 max_gen=800 mut_branch_prob=0.9 mut_insert_prob=0.2 mut_move_course_prob=0.6 mut_prob=0.7 popsize=30 (-2.5714285714285716 [based on 14 runs with cutoff 1000000000.0]) ============ 
+
+          -> After 4 bonus runs: cross_prob=0.3 max_gen=800 mut_branch_prob=0.9 mut_insert_prob=0.2 mut_move_course_prob=0.6 mut_prob=0.7 popsize=30 (5.777777777777778 [based on 18 runs with cutoff 1000000000.0])
+
+    Changing ["mut_move_course_prob: 0.6->0.2"], evaluating ...
+        -> worse: (0.7142857142857143 [based on 7 runs with cutoff 1000000000.0])
+    Changing ["max_gen: 800->600"], evaluating ...
+        -> worse: (70.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_branch_prob: 0.9->0.6"], evaluating ...
+          -> Take improving step to neighbour cross_prob=0.3 max_gen=800 mut_branch_prob=0.6 mut_insert_prob=0.2 mut_move_course_prob=0.6 mut_prob=0.7 popsize=30 (5.777777777777778 [based on 18 runs with cutoff 1000000000.0]) with flip 21
+
+          
+============= Performing 3 bonus runs of state: cross_prob=0.3 max_gen=800 mut_branch_prob=0.6 mut_insert_prob=0.2 mut_move_course_prob=0.6 mut_prob=0.7 popsize=30 (5.777777777777778 [based on 18 runs with cutoff 1000000000.0]) ============ 
+
+          -> After 3 bonus runs: cross_prob=0.3 max_gen=800 mut_branch_prob=0.6 mut_insert_prob=0.2 mut_move_course_prob=0.6 mut_prob=0.7 popsize=30 (27.80952380952381 [based on 21 runs with cutoff 1000000000.0])
+
+    Changing ["cross_prob: 0.3->0.5"], evaluating ...
+        -> worse: (100.25 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_prob: 0.7->0.4"], evaluating ...
+702/10000, 70.20000000000029/100000000.0
+        -> worse: (521.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_branch_prob: 0.6->0.1"], evaluating ...
+        -> worse: (110.25 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_prob: 0.7->0.5"], evaluating ...
+        -> worse: (220.5 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_branch_prob: 0.6->0.5"], evaluating ...
+          -> Take improving step to neighbour cross_prob=0.3 max_gen=800 mut_branch_prob=0.5 mut_insert_prob=0.2 mut_move_course_prob=0.6 mut_prob=0.7 popsize=30 (27.80952380952381 [based on 21 runs with cutoff 1000000000.0]) with flip 22
+
+          
+============= Performing 5 bonus runs of state: cross_prob=0.3 max_gen=800 mut_branch_prob=0.5 mut_insert_prob=0.2 mut_move_course_prob=0.6 mut_prob=0.7 popsize=30 (27.80952380952381 [based on 21 runs with cutoff 1000000000.0]) ============ 
+
+          -> After 5 bonus runs: cross_prob=0.3 max_gen=800 mut_branch_prob=0.5 mut_insert_prob=0.2 mut_move_course_prob=0.6 mut_prob=0.7 popsize=30 (19.423076923076923 [based on 26 runs with cutoff 1000000000.0])
+
+    Changing ["cross_prob: 0.3->0.6"], evaluating ...
+        -> worse: (46.285714285714285 [based on 7 runs with cutoff 1000000000.0])
+    Changing ["popsize: 30->10"], evaluating ...
+        -> worse: (34.285714285714285 [based on 7 runs with cutoff 1000000000.0])
+    Changing ["mut_move_course_prob: 0.6->0.7"], evaluating ...
+        -> worse: (5.857142857142857 [based on 7 runs with cutoff 1000000000.0])
+    Changing ["mut_prob: 0.7->0.9"], evaluating ...
+          -> Take improving step to neighbour cross_prob=0.3 max_gen=800 mut_branch_prob=0.5 mut_insert_prob=0.2 mut_move_course_prob=0.6 mut_prob=0.9 popsize=30 (19.423076923076923 [based on 26 runs with cutoff 1000000000.0]) with flip 23
+
+          
+============= Performing 4 bonus runs of state: cross_prob=0.3 max_gen=800 mut_branch_prob=0.5 mut_insert_prob=0.2 mut_move_course_prob=0.6 mut_prob=0.9 popsize=30 (19.423076923076923 [based on 26 runs with cutoff 1000000000.0]) ============ 
+
+          -> After 4 bonus runs: cross_prob=0.3 max_gen=800 mut_branch_prob=0.5 mut_insert_prob=0.2 mut_move_course_prob=0.6 mut_prob=0.9 popsize=30 (14.2 [based on 30 runs with cutoff 1000000000.0])
+
+    Changing ["cross_prob: 0.3->0.4"], evaluating ...
+        -> worse: (180.25 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["max_gen: 800->500"], evaluating ...
+        -> worse: (70.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_prob: 0.9->0.5"], evaluating ...
+        -> worse: (220.5 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_insert_prob: 0.2->0.3"], evaluating ...
+803/10000, 80.29999999999971/100000000.0
+          -> Take improving step to neighbour cross_prob=0.3 max_gen=800 mut_branch_prob=0.5 mut_insert_prob=0.3 mut_move_course_prob=0.6 mut_prob=0.9 popsize=30 (14.2 [based on 30 runs with cutoff 1000000000.0]) with flip 24
+
+          
+============= Performing 4 bonus runs of state: cross_prob=0.3 max_gen=800 mut_branch_prob=0.5 mut_insert_prob=0.3 mut_move_course_prob=0.6 mut_prob=0.9 popsize=30 (14.2 [based on 30 runs with cutoff 1000000000.0]) ============ 
+
+          -> After 4 bonus runs: cross_prob=0.3 max_gen=800 mut_branch_prob=0.5 mut_insert_prob=0.3 mut_move_course_prob=0.6 mut_prob=0.9 popsize=30 (25.5 [based on 34 runs with cutoff 1000000000.0])
+
+    Changing ["mut_prob: 0.9->0.8"], evaluating ...
+          -> Take improving step to neighbour cross_prob=0.3 max_gen=800 mut_branch_prob=0.5 mut_insert_prob=0.3 mut_move_course_prob=0.6 mut_prob=0.8 popsize=30 (25.5 [based on 34 runs with cutoff 1000000000.0]) with flip 25
+
+          
+============= Performing 1 bonus runs of state: cross_prob=0.3 max_gen=800 mut_branch_prob=0.5 mut_insert_prob=0.3 mut_move_course_prob=0.6 mut_prob=0.8 popsize=30 (25.5 [based on 34 runs with cutoff 1000000000.0]) ============ 
+
+          -> After 1 bonus runs: cross_prob=0.3 max_gen=800 mut_branch_prob=0.5 mut_insert_prob=0.3 mut_move_course_prob=0.6 mut_prob=0.8 popsize=30 (24.771428571428572 [based on 35 runs with cutoff 1000000000.0])
+
+    Changing ["cross_prob: 0.3->0.2"], evaluating ...
+        -> worse: (31.941176470588236 [based on 17 runs with cutoff 1000000000.0])
+    Changing ["cross_prob: 0.3->0.9"], evaluating ...
+        -> worse: (120.25 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_branch_prob: 0.5->0.2"], evaluating ...
+        -> worse: (180.25 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_prob: 0.8->0.7"], evaluating ...
+904/10000, 90.39999999999914/100000000.0
+          -> Take improving step to neighbour cross_prob=0.3 max_gen=800 mut_branch_prob=0.5 mut_insert_prob=0.3 mut_move_course_prob=0.6 mut_prob=0.7 popsize=30 (24.771428571428572 [based on 35 runs with cutoff 1000000000.0]) with flip 26
+
+          
+============= Performing 4 bonus runs of state: cross_prob=0.3 max_gen=800 mut_branch_prob=0.5 mut_insert_prob=0.3 mut_move_course_prob=0.6 mut_prob=0.7 popsize=30 (24.771428571428572 [based on 35 runs with cutoff 1000000000.0]) ============ 
+
+          -> After 4 bonus runs: cross_prob=0.3 max_gen=800 mut_branch_prob=0.5 mut_insert_prob=0.3 mut_move_course_prob=0.6 mut_prob=0.7 popsize=30 (20.205128205128204 [based on 39 runs with cutoff 1000000000.0])
+
+    Changing ["max_gen: 800->400"], evaluating ...
+        -> worse: (70.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_insert_prob: 0.3->0.4"], evaluating ...
+          -> Take improving step to neighbour cross_prob=0.3 max_gen=800 mut_branch_prob=0.5 mut_insert_prob=0.4 mut_move_course_prob=0.6 mut_prob=0.7 popsize=30 (20.205128205128204 [based on 39 runs with cutoff 1000000000.0]) with flip 27
+
+          
+============= Performing 2 bonus runs of state: cross_prob=0.3 max_gen=800 mut_branch_prob=0.5 mut_insert_prob=0.4 mut_move_course_prob=0.6 mut_prob=0.7 popsize=30 (20.205128205128204 [based on 39 runs with cutoff 1000000000.0]) ============ 
+
+          -> After 2 bonus runs: cross_prob=0.3 max_gen=800 mut_branch_prob=0.5 mut_insert_prob=0.4 mut_move_course_prob=0.6 mut_prob=0.7 popsize=30 (27.585365853658537 [based on 41 runs with cutoff 1000000000.0])
+
+    Changing ["max_gen: 800->300"], evaluating ...
+        -> worse: (110.25 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_branch_prob: 0.5->0.9"], evaluating ...
+1005/10000, 100.49999999999856/100000000.0
+          -> Take improving step to neighbour cross_prob=0.3 max_gen=800 mut_branch_prob=0.9 mut_insert_prob=0.4 mut_move_course_prob=0.6 mut_prob=0.7 popsize=30 (27.585365853658537 [based on 41 runs with cutoff 1000000000.0]) with flip 28
+
+          
+============= Performing 2 bonus runs of state: cross_prob=0.3 max_gen=800 mut_branch_prob=0.9 mut_insert_prob=0.4 mut_move_course_prob=0.6 mut_prob=0.7 popsize=30 (27.585365853658537 [based on 41 runs with cutoff 1000000000.0]) ============ 
+
+          -> After 2 bonus runs: cross_prob=0.3 max_gen=800 mut_branch_prob=0.9 mut_insert_prob=0.4 mut_move_course_prob=0.6 mut_prob=0.7 popsize=30 (25.837209302325583 [based on 43 runs with cutoff 1000000000.0])
+
+    Changing ["max_gen: 800->500"], evaluating ...
+        -> worse: (70.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["cross_prob: 0.3->0.9"], evaluating ...
+        -> worse: (120.25 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_branch_prob: 0.9->0.7"], evaluating ...
+          -> Take improving step to neighbour cross_prob=0.3 max_gen=800 mut_branch_prob=0.7 mut_insert_prob=0.4 mut_move_course_prob=0.6 mut_prob=0.7 popsize=30 (25.837209302325583 [based on 43 runs with cutoff 1000000000.0]) with flip 29
+
+          
+============= Performing 3 bonus runs of state: cross_prob=0.3 max_gen=800 mut_branch_prob=0.7 mut_insert_prob=0.4 mut_move_course_prob=0.6 mut_prob=0.7 popsize=30 (25.837209302325583 [based on 43 runs with cutoff 1000000000.0]) ============ 
+
+          -> After 3 bonus runs: cross_prob=0.3 max_gen=800 mut_branch_prob=0.7 mut_insert_prob=0.4 mut_move_course_prob=0.6 mut_prob=0.7 popsize=30 (24.152173913043477 [based on 46 runs with cutoff 1000000000.0])
+
+    Changing ["popsize: 30->15"], evaluating ...
+        -> worse: (40.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["popsize: 30->10"], evaluating ...
+        -> worse: (34.285714285714285 [based on 7 runs with cutoff 1000000000.0])
+    Changing ["mut_branch_prob: 0.7->0.8"], evaluating ...
+1106/10000, 110.59999999999799/100000000.0
+          -> Take improving step to neighbour cross_prob=0.3 max_gen=800 mut_branch_prob=0.8 mut_insert_prob=0.4 mut_move_course_prob=0.6 mut_prob=0.7 popsize=30 (24.152173913043477 [based on 46 runs with cutoff 1000000000.0]) with flip 30
+
+          
+============= Performing 3 bonus runs of state: cross_prob=0.3 max_gen=800 mut_branch_prob=0.8 mut_insert_prob=0.4 mut_move_course_prob=0.6 mut_prob=0.7 popsize=30 (24.152173913043477 [based on 46 runs with cutoff 1000000000.0]) ============ 
+
+          -> After 3 bonus runs: cross_prob=0.3 max_gen=800 mut_branch_prob=0.8 mut_insert_prob=0.4 mut_move_course_prob=0.6 mut_prob=0.7 popsize=30 (21.06122448979592 [based on 49 runs with cutoff 1000000000.0])
+
+    Changing ["cross_prob: 0.3->0.1"], evaluating ...
+        -> worse: (1032.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["popsize: 30->15"], evaluating ...
+        -> worse: (40.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["cross_prob: 0.3->0.5"], evaluating ...
+        -> worse: (100.25 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_move_course_prob: 0.6->0.4"], evaluating ...
+        -> worse: (220.5 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["max_gen: 800->400"], evaluating ...
+        -> worse: (70.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["max_gen: 800->300"], evaluating ...
+        -> worse: (110.25 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_move_course_prob: 0.6->0.8"], evaluating ...
+        -> worse: (80.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_branch_prob: 0.8->0.3"], evaluating ...
+        -> worse: (40.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_move_course_prob: 0.6->0.2"], evaluating ...
+        -> worse: (0.7142857142857143 [based on 7 runs with cutoff 1000000000.0])
+    Changing ["mut_insert_prob: 0.4->0.6"], evaluating ...
+1207/10000, 120.69999999999742/100000000.0
+          -> Take improving step to neighbour cross_prob=0.3 max_gen=800 mut_branch_prob=0.8 mut_insert_prob=0.6 mut_move_course_prob=0.6 mut_prob=0.7 popsize=30 (21.06122448979592 [based on 49 runs with cutoff 1000000000.0]) with flip 31
+
+          
+============= Performing 10 bonus runs of state: cross_prob=0.3 max_gen=800 mut_branch_prob=0.8 mut_insert_prob=0.6 mut_move_course_prob=0.6 mut_prob=0.7 popsize=30 (21.06122448979592 [based on 49 runs with cutoff 1000000000.0]) ============ 
+
+          -> After 10 bonus runs: cross_prob=0.3 max_gen=800 mut_branch_prob=0.8 mut_insert_prob=0.6 mut_move_course_prob=0.6 mut_prob=0.7 popsize=30 (29.050847457627118 [based on 59 runs with cutoff 1000000000.0])
+
+    Changing ["mut_branch_prob: 0.8->0.7"], evaluating ...
+          -> Take improving step to neighbour cross_prob=0.3 max_gen=800 mut_branch_prob=0.7 mut_insert_prob=0.6 mut_move_course_prob=0.6 mut_prob=0.7 popsize=30 (29.050847457627118 [based on 59 runs with cutoff 1000000000.0]) with flip 32
+
+          
+============= Performing 1 bonus runs of state: cross_prob=0.3 max_gen=800 mut_branch_prob=0.7 mut_insert_prob=0.6 mut_move_course_prob=0.6 mut_prob=0.7 popsize=30 (29.050847457627118 [based on 59 runs with cutoff 1000000000.0]) ============ 
+
+          -> After 1 bonus runs: cross_prob=0.3 max_gen=800 mut_branch_prob=0.7 mut_insert_prob=0.6 mut_move_course_prob=0.6 mut_prob=0.7 popsize=30 (28.566666666666666 [based on 60 runs with cutoff 1000000000.0])
+
+    Changing ["cross_prob: 0.3->0.5"], evaluating ...
+        -> worse: (100.25 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["cross_prob: 0.3->0.9"], evaluating ...
+        -> worse: (120.25 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_move_course_prob: 0.6->0.1"], evaluating ...
+1308/10000, 130.79999999999686/100000000.0
+        -> worse: (42.2 [based on 5 runs with cutoff 1000000000.0])
+    Changing ["max_gen: 800->500"], evaluating ...
+        -> worse: (70.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_prob: 0.7->0.8"], evaluating ...
+          -> Take improving step to neighbour cross_prob=0.3 max_gen=800 mut_branch_prob=0.7 mut_insert_prob=0.6 mut_move_course_prob=0.6 mut_prob=0.8 popsize=30 (28.566666666666666 [based on 60 runs with cutoff 1000000000.0]) with flip 33
+
+          
+============= Performing 5 bonus runs of state: cross_prob=0.3 max_gen=800 mut_branch_prob=0.7 mut_insert_prob=0.6 mut_move_course_prob=0.6 mut_prob=0.8 popsize=30 (28.566666666666666 [based on 60 runs with cutoff 1000000000.0]) ============ 
+
+          -> After 5 bonus runs: cross_prob=0.3 max_gen=800 mut_branch_prob=0.7 mut_insert_prob=0.6 mut_move_course_prob=0.6 mut_prob=0.8 popsize=30 (48.56923076923077 [based on 65 runs with cutoff 1000000000.0])
+
+    Changing ["popsize: 30->20"], evaluating ...
+        -> worse: (34.2 [based on 5 runs with cutoff 1000000000.0])
+    Changing ["mut_branch_prob: 0.7->0.1"], evaluating ...
+        -> worse: (40.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["max_gen: 800->600"], evaluating ...
+        -> worse: (70.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_prob: 0.8->0.2"], evaluating ...
+        -> worse: (120.25 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_prob: 0.8->0.4"], evaluating ...
+        -> worse: (521.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_branch_prob: 0.7->0.4"], evaluating ...
+1409/10000, 140.89999999999628/100000000.0
+          -> Take improving step to neighbour cross_prob=0.3 max_gen=800 mut_branch_prob=0.4 mut_insert_prob=0.6 mut_move_course_prob=0.6 mut_prob=0.8 popsize=30 (48.56923076923077 [based on 65 runs with cutoff 1000000000.0]) with flip 34
+
+          
+============= Performing 6 bonus runs of state: cross_prob=0.3 max_gen=800 mut_branch_prob=0.4 mut_insert_prob=0.6 mut_move_course_prob=0.6 mut_prob=0.8 popsize=30 (48.56923076923077 [based on 65 runs with cutoff 1000000000.0]) ============ 
+
+          -> After 6 bonus runs: cross_prob=0.3 max_gen=800 mut_branch_prob=0.4 mut_insert_prob=0.6 mut_move_course_prob=0.6 mut_prob=0.8 popsize=30 (43.647887323943664 [based on 71 runs with cutoff 1000000000.0])
+
+    Changing ["mut_insert_prob: 0.6->0.9"], evaluating ...
+1510/10000, 150.9999999999957/100000000.0
+          -> Take improving step to neighbour cross_prob=0.3 max_gen=800 mut_branch_prob=0.4 mut_insert_prob=0.9 mut_move_course_prob=0.6 mut_prob=0.8 popsize=30 (43.647887323943664 [based on 71 runs with cutoff 1000000000.0]) with flip 35
+
+          
+============= Performing 1 bonus runs of state: cross_prob=0.3 max_gen=800 mut_branch_prob=0.4 mut_insert_prob=0.9 mut_move_course_prob=0.6 mut_prob=0.8 popsize=30 (43.647887323943664 [based on 71 runs with cutoff 1000000000.0]) ============ 
+
+          -> After 1 bonus runs: cross_prob=0.3 max_gen=800 mut_branch_prob=0.4 mut_insert_prob=0.9 mut_move_course_prob=0.6 mut_prob=0.8 popsize=30 (42.763888888888886 [based on 72 runs with cutoff 1000000000.0])
+
+    Changing ["max_gen: 800->600"], evaluating ...
+        -> worse: (70.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_branch_prob: 0.4->0.9"], evaluating ...
+1611/10000, 161.09999999999513/100000000.0
+          -> Take improving step to neighbour cross_prob=0.3 max_gen=800 mut_branch_prob=0.9 mut_insert_prob=0.9 mut_move_course_prob=0.6 mut_prob=0.8 popsize=30 (42.763888888888886 [based on 72 runs with cutoff 1000000000.0]) with flip 36
+
+          
+============= Performing 2 bonus runs of state: cross_prob=0.3 max_gen=800 mut_branch_prob=0.9 mut_insert_prob=0.9 mut_move_course_prob=0.6 mut_prob=0.8 popsize=30 (42.763888888888886 [based on 72 runs with cutoff 1000000000.0]) ============ 
+
+          -> After 2 bonus runs: cross_prob=0.3 max_gen=800 mut_branch_prob=0.9 mut_insert_prob=0.9 mut_move_course_prob=0.6 mut_prob=0.8 popsize=30 (41.608108108108105 [based on 74 runs with cutoff 1000000000.0])
+
+    Changing ["popsize: 30->25"], evaluating ...
+        -> worse: (40.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_insert_prob: 0.9->0.3"], evaluating ...
+          -> Take improving step to neighbour cross_prob=0.3 max_gen=800 mut_branch_prob=0.9 mut_insert_prob=0.3 mut_move_course_prob=0.6 mut_prob=0.8 popsize=30 (41.608108108108105 [based on 74 runs with cutoff 1000000000.0]) with flip 37
+
+          
+============= Performing 2 bonus runs of state: cross_prob=0.3 max_gen=800 mut_branch_prob=0.9 mut_insert_prob=0.3 mut_move_course_prob=0.6 mut_prob=0.8 popsize=30 (41.608108108108105 [based on 74 runs with cutoff 1000000000.0]) ============ 
+
+          -> After 2 bonus runs: cross_prob=0.3 max_gen=800 mut_branch_prob=0.9 mut_insert_prob=0.3 mut_move_course_prob=0.6 mut_prob=0.8 popsize=30 (40.51315789473684 [based on 76 runs with cutoff 1000000000.0])
+
+    Changing ["max_gen: 800->400"], evaluating ...
+        -> worse: (70.0 [based on 4 runs with cutoff 1000000000.0])
+    Changing ["mut_prob: 0.8->0.9"], evaluating ...
+1712/10000, 171.19999999999456/100000000.0
+          -> Take improving step to neighbour cross_prob=0.3 max_gen=800 mut_branch_prob=0.9 mut_insert_prob=0.3 mut_move_course_prob=0.6 mut_prob=0.9 popsize=30 (40.51315789473684 [based on 76 runs with cutoff 1000000000.0]) with flip 38
+
+          
+============= Performing 2 bonus runs of state: cross_prob=0.3 max_gen=800 mut_branch_prob=0.9 mut_insert_prob=0.3 mut_move_course_prob=0.6 mut_prob=0.9 popsize=30 (40.51315789473684 [based on 76 runs with cutoff 1000000000.0]) ============ 
+
+          -> After 2 bonus runs: cross_prob=0.3 max_gen=800 mut_branch_prob=0.9 mut_insert_prob=0.3 mut_move_course_prob=0.6 mut_prob=0.9 popsize=30 (43.32051282051282 [based on 78 runs with cutoff 1000000000.0])
+
+    Changing ["mut_insert_prob: 0.3->0.9"], evaluating ...
+1813/10000, 181.299999999994/100000000.0

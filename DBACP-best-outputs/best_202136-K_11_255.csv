@@ -7,12 +7,12 @@ Solution summary:
   Feasible: yes
   Fitness: 0.75
   Periods: 4
-  Period 0 - 20 credits: inf295 inf307 inf312 inf306
-  Period 1 - 20 credits: inf313 inf360 inf308 inf305
-  Period 2 - 19 credits: inf7 inf228 inf309 inf314
+  Period 0 - 20 credits: inf295 inf360 inf313 inf308
+  Period 1 - 19 credits: inf7 inf309 inf307 inf312 inf314
+  Period 2 - 20 credits: inf228 inf306 inf305
   Period 3 - 20 credits: inf310
 
 
-Reporting top 5 solutions...
+Reporting top 25 solutions...
 
-Time elapsed: 3.88917 seconds
+Time elapsed: 5.4277 seconds

@@ -6,18 +6,17 @@ Best solution found:
 Solution summary:
   Feasible: yes
   Fitness: 8
-  Periods: 9
-  Period 0 - 20 credits: inf311 inf280 inf245 inf239
-  Period 1 - 22 credits: inf292 inf246 inf236 inf221 inf7
-  Period 2 - 22 credits: hrw2 inf5 inf270 inf312 inf285 inf2
-  Period 3 - 22 credits: inf276 inf225 inf313 inf6 icn270
-  Period 4 - 20 credits: inf256 inf322 inf314 inf308
-  Period 5 - 22 credits: inf305 inf266 inf306 inf307 inf1
-  Period 6 - 22 credits: inf293 inf360 inf4 fis140 inf3
-  Period 7 - 22 credits: inf295 inf343 inf228 inf309
-  Period 8 - 20 credits: inf310
+  Periods: 8
+  Period 0 - 25 credits: inf305 inf292 inf245 inf239 inf307
+  Period 1 - 24 credits: icn270 inf246 inf236 inf6 inf221 inf2
+  Period 2 - 25 credits: inf311 inf270 inf225 inf314 inf285
+  Period 3 - 23 credits: inf256 hrw2 inf276 inf322 inf313
+  Period 4 - 25 credits: inf280 inf343 inf266 inf312 inf308
+  Period 5 - 24 credits: inf293 inf295 inf360 inf306 inf4 inf3
+  Period 6 - 22 credits: inf228 inf309 inf7 fis140
+  Period 7 - 24 credits: inf5 inf310 inf1
 
 
-Reporting top 5 solutions...
+Reporting top 25 solutions...
 
-Time elapsed: 28.6591 seconds
+Time elapsed: 40.4514 seconds

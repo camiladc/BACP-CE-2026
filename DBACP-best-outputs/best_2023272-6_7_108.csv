@@ -7,13 +7,13 @@ Solution summary:
   Feasible: yes
   Fitness: 2
   Periods: 5
-  Period 0 - 28 credits: inf225 inf295 inf314 hrw2 inf256 inf312
-  Period 1 - 29 credits: inf311 inf305 inf322 inf266 inf313 inf7 inf2
-  Period 2 - 28 credits: inf307 inf360 inf5 inf285 inf308 inf4 inf6 inf3
-  Period 3 - 27 credits: inf293 inf228 inf309 inf343 inf306
-  Period 4 - 28 credits: inf310 hrw1 inf155
+  Period 0 - 29 credits: inf311 inf305 inf225 inf266 inf306 inf7 inf3
+  Period 1 - 28 credits: inf322 inf5 inf256 inf312 inf308 inf2 inf4 inf6
+  Period 2 - 28 credits: inf285 inf307 inf360 inf293 hrw1 inf155
+  Period 3 - 27 credits: inf228 inf309 inf295 inf314 inf343
+  Period 4 - 28 credits: inf310 hrw2 inf313
 
 
-Reporting top 5 solutions...
+Reporting top 25 solutions...
 
-Time elapsed: 16.7804 seconds
+Time elapsed: 28.2037 seconds

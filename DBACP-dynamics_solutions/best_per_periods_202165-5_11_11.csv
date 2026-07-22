@@ -1,0 +1,7 @@
+total_periods;period;courses;total_credits;period_fit;total_fit
+2;1;inf5,inf310,inf7,;24;0;0
+3;1;inf5,inf7,;4;64;128
+3;2;inf310,;20;64;128
+4;1;inf5,;2;36;216
+4;2;inf7,;2;36;216
+4;3;inf310,;20;144;216

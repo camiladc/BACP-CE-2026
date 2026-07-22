@@ -7,12 +7,12 @@ Solution summary:
   Feasible: yes
   Fitness: 2
   Periods: 4
-  Period 0 - 33 credits: inf3 inf6 inf312 inf313 inf322 inf4 inf305 inf311 inf1
-  Period 1 - 32 credits: inf314 inf360 inf306 fis140 inf293 inf2 inf5
-  Period 2 - 34 credits: inf295 inf308 inf228 inf309 inf343 inf285 inf7
-  Period 3 - 33 credits: hrw1 inf310 icn270 inf307
+  Period 0 - 33 credits: inf6 inf312 inf295 inf313 inf322 inf4 inf311 inf7 inf5
+  Period 1 - 32 credits: inf314 inf360 inf306 fis140 inf285 inf3 inf2
+  Period 2 - 34 credits: inf1 inf308 inf228 inf309 inf343 inf307 inf293
+  Period 3 - 33 credits: hrw1 inf310 icn270 inf305
 
 
-Reporting top 5 solutions...
+Reporting top 25 solutions...
 
-Time elapsed: 13.5246 seconds
+Time elapsed: 18.2289 seconds

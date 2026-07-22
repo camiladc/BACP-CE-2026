@@ -7,13 +7,13 @@ Solution summary:
   Feasible: yes
   Fitness: 0.8
   Periods: 5
-  Period 0 - 29 credits: mat024 inf292 iwn170 fis120 inf312
-  Period 1 - 29 credits: inf7 inf360 inf4 inf313 inf305 inf343 inf311
-  Period 2 - 29 credits: inf285 inf309 inf295 inf306 inf307 inf314 inf2
-  Period 3 - 30 credits: inf228 inf293 inf6 fis140 inf308
-  Period 4 - 29 credits: inf310 icn270 inf3 inf5
+  Period 0 - 29 credits: inf360 fis120 mat024 inf305 inf311
+  Period 1 - 29 credits: inf7 inf4 inf6 fis140 inf285 inf312 inf314
+  Period 2 - 29 credits: inf292 inf228 iwn170 inf306 inf2 inf5
+  Period 3 - 29 credits: inf295 inf309 icn270 inf313 inf308 inf343 inf3
+  Period 4 - 30 credits: inf293 inf310 inf307
 
 
-Reporting top 5 solutions...
+Reporting top 25 solutions...
 
-Time elapsed: 15.3169 seconds
+Time elapsed: 20.7011 seconds

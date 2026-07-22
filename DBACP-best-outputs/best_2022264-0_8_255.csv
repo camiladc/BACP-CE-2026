@@ -7,13 +7,13 @@ Solution summary:
   Feasible: yes
   Fitness: 2.8
   Periods: 5
-  Period 0 - 32 credits: inf276 inf225 inf312 inf221 inf280 inf311 inf3
-  Period 1 - 31 credits: inf266 inf322 inf6 inf313 inf314 inf307 inf1 inf5
-  Period 2 - 30 credits: inf360 inf246 inf285 inf293 inf295 inf308
-  Period 3 - 31 credits: inf228 inf309 inf256 inf306 icn270 inf7 inf2
-  Period 4 - 32 credits: inf310 inf343 inf305 inf4
+  Period 0 - 30 credits: inf225 inf276 inf246 inf305 inf280 inf314
+  Period 1 - 32 credits: inf313 inf322 inf266 inf307 inf311 inf5 inf306
+  Period 2 - 31 credits: inf360 inf221 inf293 inf295 inf308 inf4 inf7 inf2
+  Period 3 - 31 credits: inf228 inf309 inf256 inf285 icn270 inf1 inf3
+  Period 4 - 32 credits: inf312 inf6 inf310 inf343
 
 
-Reporting top 5 solutions...
+Reporting top 25 solutions...
 
-Time elapsed: 20.1386 seconds
+Time elapsed: 26.4792 seconds

@@ -5,19 +5,20 @@ Loading student specific case...
 Best solution found:
 Solution summary:
   Feasible: yes
-  Fitness: 16
-  Periods: 9
-  Period 0 - 23 credits: fis140 inf134 inf313 inf314
-  Period 1 - 22 credits: inf312 inf305 inf308 inf311 inf7
-  Period 2 - 22 credits: inf245 inf253 inf239 inf270 inf3
-  Period 3 - 25 credits: inf246 inf280 inf221 inf236 inf276
-  Period 4 - 25 credits: inf256 inf292 inf285 inf225 inf266
-  Period 5 - 22 credits: inf343 inf322 inf5 icn270 inf307
-  Period 6 - 22 credits: inf295 inf360 inf4 inf306 inf293
-  Period 7 - 21 credits: inf6 inf155 inf228 inf309 inf1
-  Period 8 - 22 credits: inf310 inf2
+  Fitness: 4.4
+  Periods: 10
+  Period 0 - 21 credits: inf313 inf6 inf308 inf307 inf1 inf3
+  Period 1 - 21 credits: inf134 inf292 inf5 inf4 icn270 inf7
+  Period 2 - 20 credits: inf245 inf239 inf270 inf305
+  Period 3 - 20 credits: inf246 inf280 inf253 inf314
+  Period 4 - 20 credits: inf295 inf221 inf236 inf276
+  Period 5 - 20 credits: inf155 inf256 inf285 inf225
+  Period 6 - 20 credits: inf343 inf322 inf266 inf311
+  Period 7 - 20 credits: inf360 fis140 inf306 inf2
+  Period 8 - 22 credits: inf312 inf293 inf228 inf309
+  Period 9 - 20 credits: inf310
 
 
-Reporting top 5 solutions...
+Reporting top 25 solutions...
 
-Time elapsed: 35.7947 seconds
+Time elapsed: 46.4497 seconds

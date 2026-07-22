@@ -7,11 +7,11 @@ Solution summary:
   Feasible: yes
   Fitness: 0
   Periods: 3
-  Period 0 - 27 credits: inf7 inf6 inf308 inf360 inf4 inf307 inf3 inf2 inf5
-  Period 1 - 27 credits: inf228 inf309 inf343 icn270 inf305
-  Period 2 - 27 credits: inf310 inf306 inf1
+  Period 0 - 27 credits: inf308 inf360 inf4 inf306 inf307 inf305
+  Period 1 - 27 credits: inf6 inf228 inf309 inf343 inf1 inf3 inf7 inf2
+  Period 2 - 27 credits: icn270 inf310 inf5
 
 
-Reporting top 5 solutions...
+Reporting top 25 solutions...
 
-Time elapsed: 5.78974 seconds
+Time elapsed: 7.92516 seconds

@@ -5,17 +5,17 @@ Loading student specific case...
 Best solution found:
 Solution summary:
   Feasible: yes
-  Fitness: 5.71429
+  Fitness: 1.71429
   Periods: 7
-  Period 0 - 34 credits: inf239 inf253 mat023 hrw2 inf4 inf1 fis130 inf7
-  Period 1 - 34 credits: inf236 inf221 mat024 inf305 inf5 inf313 inf6 inf2 inf3
-  Period 2 - 35 credits: inf285 iwn170 inf225 inf276 inf311 inf245 inf306
-  Period 3 - 33 credits: inf280 inf322 inf266 inf246 inf307 fis120
-  Period 4 - 33 credits: inf292 icn270 inf360 inf256 inf312 fis140
-  Period 5 - 32 credits: inf293 inf295 inf228 inf309 inf343 inf155
-  Period 6 - 33 credits: inf310 inf314 hrw1 inf308
+  Period 0 - 33 credits: inf253 inf239 inf276 inf245 inf5 inf312 inf4 inf7 inf2
+  Period 1 - 33 credits: inf236 inf266 inf246 hrw2 inf313 inf307 inf314
+  Period 2 - 33 credits: inf311 inf305 inf225 inf256 inf306 fis130
+  Period 3 - 33 credits: mat023 inf221 inf322 inf343 hrw1 fis120
+  Period 4 - 34 credits: inf280 inf292 iwn170 mat024 inf360 fis140
+  Period 5 - 34 credits: inf293 inf295 icn270 inf285 inf228 inf309 inf3
+  Period 6 - 34 credits: inf6 inf310 inf155 inf1 inf308
 
 
-Reporting top 5 solutions...
+Reporting top 25 solutions...
 
-Time elapsed: 43.5017 seconds
+Time elapsed: 61.1909 seconds

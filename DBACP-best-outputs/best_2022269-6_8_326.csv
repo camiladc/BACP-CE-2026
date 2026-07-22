@@ -5,15 +5,15 @@ Loading student specific case...
 Best solution found:
 Solution summary:
   Feasible: yes
-  Fitness: 2
+  Fitness: 4
   Periods: 5
-  Period 0 - 33 credits: inf256 inf225 inf276 inf314 inf4 inf307 inf3 inf7 inf5
-  Period 1 - 33 credits: inf343 inf6 inf313 inf322 inf266 mat024 inf306
-  Period 2 - 33 credits: inf360 inf292 fis140 inf221 inf308 icn270
-  Period 3 - 32 credits: inf312 inf228 inf309 inf293 inf305 inf285
-  Period 4 - 34 credits: inf310 inf295 inf311 inf1 inf2
+  Period 0 - 34 credits: inf225 inf276 inf292 inf256 inf314 inf4 inf306 inf7
+  Period 1 - 32 credits: inf322 inf266 inf343 inf221 icn270 inf307 inf5
+  Period 2 - 33 credits: fis140 inf6 inf360 inf293 mat024 inf311 inf2
+  Period 3 - 32 credits: inf312 inf228 inf309 inf295 inf305 inf285
+  Period 4 - 34 credits: inf313 inf310 inf308 inf1 inf3
 
 
-Reporting top 5 solutions...
+Reporting top 25 solutions...
 
-Time elapsed: 21.1234 seconds
+Time elapsed: 27.8103 seconds

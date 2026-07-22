@@ -5,19 +5,19 @@ Loading student specific case...
 Best solution found:
 Solution summary:
   Feasible: yes
-  Fitness: 18.8889
+  Fitness: 8.88889
   Periods: 9
-  Period 0 - 30 credits: inf134 inf260 inf314 qui010 hrw2 hrw1 inf4 inf1
-  Period 1 - 31 credits: inf6 inf152 inf270 inf311 inf7 inf3 inf305 inf306
-  Period 2 - 30 credits: inf239 inf245 inf155 inf253 inf276 inf308
-  Period 3 - 32 credits: inf236 inf246 inf221 mat022 inf266 inf307
-  Period 4 - 30 credits: inf225 inf256 mat023 fis100 inf313 inf5
-  Period 5 - 34 credits: inf322 mat024 fis110 inf292 inf280 iwn170
-  Period 6 - 33 credits: inf343 inf285 fis120 inf293 icn270 inf360
-  Period 7 - 30 credits: fis130 inf295 inf309 inf228 inf312
-  Period 8 - 30 credits: fis140 inf310 inf2
+  Period 0 - 31 credits: inf5 inf152 inf260 inf314 inf311 inf4 inf1 inf306
+  Period 1 - 31 credits: inf134 inf270 hrw2 hrw1 inf312 inf305 inf308
+  Period 2 - 32 credits: inf239 inf245 inf155 inf253 inf276 qui010 inf7
+  Period 3 - 32 credits: inf236 inf246 mat022 inf266 inf313 inf221
+  Period 4 - 30 credits: inf225 inf256 mat023 fis100 inf6 inf307
+  Period 5 - 30 credits: inf322 fis110 inf292 inf280 iwn170 inf3
+  Period 6 - 31 credits: mat024 fis120 inf295 icn270 inf360 inf2
+  Period 7 - 30 credits: inf343 inf285 fis130 inf309 inf228
+  Period 8 - 33 credits: fis140 inf293 inf310
 
 
-Reporting top 5 solutions...
+Reporting top 25 solutions...
 
-Time elapsed: 68.4675 seconds
+Time elapsed: 105.004 seconds

@@ -7,9 +7,9 @@ Solution summary:
   Feasible: yes
   Fitness: 0
   Periods: 1
-  Period 0 - 24 credits: inf310 inf5 inf7
+  Period 0 - 24 credits: inf5 inf7 inf310
 
 
-Reporting top 5 solutions...
+Reporting top 25 solutions...
 
-Time elapsed: 0.439063 seconds
+Time elapsed: 0.68819 seconds

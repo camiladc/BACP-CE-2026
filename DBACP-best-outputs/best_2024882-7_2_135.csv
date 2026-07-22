@@ -7,16 +7,16 @@ Solution summary:
   Feasible: yes
   Fitness: 4
   Periods: 8
-  Period 0 - 34 credits: inf152 inf134 mat022 fis110 inf3 qui010 dew101
-  Period 1 - 35 credits: fis120 inf253 inf239 inf260 inf5 inf313 inf314
-  Period 2 - 33 credits: inf155 fis130 inf221 inf236 inf270 hrw1 inf2
-  Period 3 - 35 credits: mat023 fis140 inf225 inf276 inf245 hrw2 inf1
-  Period 4 - 35 credits: inf292 mat024 inf322 inf266 inf280 inf246 inf7 inf4
-  Period 5 - 35 credits: inf295 inf285 inf360 inf293 iwn170 inf256 inf307
-  Period 6 - 34 credits: inf228 inf309 icn270 inf343 inf6 inf308 inf312
-  Period 7 - 35 credits: inf310 inf306 inf305 inf311
+  Period 0 - 34 credits: mat022 fis110 inf152 inf134 inf5 inf3 qui010
+  Period 1 - 35 credits: fis120 inf239 inf253 inf260 inf306 inf2 inf314
+  Period 2 - 33 credits: inf307 fis130 inf221 inf236 inf270 inf6 hrw1
+  Period 3 - 34 credits: dew101 mat023 fis140 inf225 inf276 inf245 inf1
+  Period 4 - 35 credits: inf292 mat024 inf322 inf266 inf246 inf280 inf7 inf4
+  Period 5 - 35 credits: inf285 inf155 inf295 inf360 inf256 inf293 iwn170
+  Period 6 - 35 credits: inf228 inf309 inf343 icn270 hrw2 inf305 inf313
+  Period 7 - 35 credits: inf310 inf308 inf311 inf312
 
 
-Reporting top 5 solutions...
+Reporting top 25 solutions...
 
-Time elapsed: 67.2594 seconds
+Time elapsed: 98.8299 seconds
