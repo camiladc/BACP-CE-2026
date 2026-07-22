@@ -63,6 +63,7 @@ std::vector<int> getChildrenCourses(int id_course);
 std::vector<int> getCourseParents(int id_course);
 void buildCoursePeriodRelationship(individual& ind, int id_course);
 void setCoursePeriodRelationship(individual& parent, individual& child, int id_course, std::vector<int>& courses_enrolled);
+void saveBestPerPeriod(std::vector<individual>& pop, std::vector<individual>& best_per_period);
 
 int getCoursePeriod(const individual& ind, int course);
 int periodLoad(const individual& ind, int period, int skipCourse = -1);
@@ -74,12 +75,14 @@ void syncCourseChildrenPeriod(individual& ind);
 void collectBranchCourses(int root, std::vector<int>& out);
 void removeCourseFromPeriod(individual& ind, int course, int period);
 void trimTrailingEmptyPeriods(individual& ind);
+void trimEmpyPeriods(individual& ind);
 bool tryMoveCourse(individual& ind, int course, int fromPeriod, int toPeriod);
 
 // Writer functions
 void writeInd(individual &ind);
 void reportBest(int gen, std::vector<individual>& pop, std::ofstream& out);
 void reportSolutions(std::vector<individual>& pop, std::ofstream& out);
+void reportBestPerPeriod(std::vector<individual>& best_per_period, std::ofstream& out);
 
 /* ------------- GLOBAL VARIABLES ---------------------*/
 

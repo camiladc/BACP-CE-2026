@@ -104,6 +104,8 @@ individual initialize_ind(){
         }
     }
 
+    trimEmpyPeriods(new_ind);
+
     // if num peeriodo is equal to max_peeriod, ensure that the number of periods is at least num_periods and relocate the least amount of courses without prerequisites to the new empty periods
     if ((num_periods == max_periods) && (static_cast<int>(new_ind.courses.size()) < num_periods)) {
         new_ind.courses.resize(num_periods);

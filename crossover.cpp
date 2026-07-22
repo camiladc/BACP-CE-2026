@@ -69,5 +69,15 @@ vector<individual> crossover(individual &parent1, individual &parent2){
     // ch2 inherits subgraph from p1, the rest is inherited from p2
     inherit(parent2, parent1, child2, sampled_course);
 
+    trimEmpyPeriods(child1);
+    trimEmpyPeriods(child2);
+    
+    if (!validateIndividual(child1)) {
+        child1 = parent1;
+    }
+    if (!validateIndividual(child2)) {
+        child2 = parent2;
+    }
+
     return vector<individual> {child1, child2};
 }

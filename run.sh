@@ -7,7 +7,7 @@ instances_dir="DBACP"
 output_dir="DBACP-best-outputs"
 
 # Parámetros del algoritmo
-max_gen=600
+max_gen=800
 popsize=25
 cross_prob=0.2
 mut_prob=0.7

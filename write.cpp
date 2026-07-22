@@ -65,3 +65,18 @@ void reportSolutions(vector<individual>& pop, ofstream& out) {
         }
     }
 }
+
+// Function that reports best individuals per period to period_solution file
+void reportBestPerPeriod(vector<individual>& best_per_period, ofstream& out) {
+    for (int t = 0; t < static_cast<int>(best_per_period.size()); t++) {
+        individual ind = best_per_period[t];
+        if (!ind.is_feasible)
+            continue;
+        for(int p = 0; p < static_cast<int>(ind.courses.size()); p++) {
+            out << t+1 << ";" << p+1 << ";";
+            for (int i = 0; i < static_cast<int>(ind.courses[p].size()); i++)
+                out << course_names[ind.courses[p][i]] << ",";
+            out << ";" << ind.total_credits_per_period[p] << ";" << ind.period_fitness[p] << ";" << ind.fitness[0] << endl;
+        }
+    }
+}

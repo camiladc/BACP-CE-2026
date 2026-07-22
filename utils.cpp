@@ -280,6 +280,15 @@ void trimTrailingEmptyPeriods(individual& ind) {
         ind.courses.pop_back();
 }
 
+void trimEmpyPeriods(individual& ind) {
+    vector<vector<int>> newCourses;
+    for (const auto& periodCourses : ind.courses) {
+        if (!periodCourses.empty())
+            newCourses.push_back(periodCourses);
+    }
+    ind.courses = std::move(newCourses);
+}
+
 bool tryMoveCourse(individual& ind, int course, int fromPeriod, int toPeriod) {
     if (fromPeriod == toPeriod)
         return false;
@@ -291,4 +300,24 @@ bool tryMoveCourse(individual& ind, int course, int fromPeriod, int toPeriod) {
     removeCourseFromPeriod(ind, course, fromPeriod);
     ind.courses[toPeriod].push_back(course);
     return true;
+}
+
+// Function that saves in memory the best individual found so far per individual course size (periods) after each generation
+void saveBestPerPeriod(vector<individual>& pop, vector<individual>& best_per_period) {
+    vector<individual> aux_pop = pop;
+    sort(aux_pop.begin(), aux_pop.end(), fitnessComparisonAsc);
+
+    for (const individual& ind : aux_pop) {
+        if (!ind.is_feasible)
+            continue;
+
+        int numPeriods = static_cast<int>(ind.courses.size());
+        if (numPeriods >= static_cast<int>(best_per_period.size())) {
+            best_per_period.resize(numPeriods + 1);
+        }
+
+        if (best_per_period[numPeriods].courses.empty() || ind.fitness[0] < best_per_period[numPeriods].fitness[0]) {
+            best_per_period[numPeriods] = ind;
+        }
+    }
 }

@@ -44,7 +44,7 @@ static bool mutateBranchShift(individual& ind) {
 
     removeCourseFromPeriod(ind, course, currentPeriod);
     ind.courses[newPeriod].push_back(course);
-    trimTrailingEmptyPeriods(ind);
+    trimEmpyPeriods(ind);
 
     return validateIndividual(ind);
 }
@@ -87,7 +87,7 @@ static bool mutateInsertPeriod(individual& ind) {
             ++moved;
     }
 
-    trimTrailingEmptyPeriods(ind);
+    trimEmpyPeriods(ind);
     if (moved == 0)
         return false;
 
@@ -128,7 +128,7 @@ static bool mutateRemovePeriod(individual& ind) {
         ind.courses[targetPeriod].push_back(course);
     }
 
-    trimTrailingEmptyPeriods(ind);
+    trimEmpyPeriods(ind);
     return validateIndividual(ind);
 }
 
@@ -152,7 +152,7 @@ static bool mutateMoveCourseLowerCreditPeriod(individual& ind) {
     if (!tryMoveCourse(ind, courseToMove, maxCreditsPeriod, minCreditsPeriod))
         return false;
 
-    trimTrailingEmptyPeriods(ind);
+    trimEmpyPeriods(ind);
     return validateIndividual(ind);
 }
 
